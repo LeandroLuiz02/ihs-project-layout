@@ -35,6 +35,10 @@ def main():
     red = os.read(fd, 4); # read 4 bytes and store in red var
     print("red 0x%X"%int.from_bytes(red, 'little'))
 
+    ioctl(fd, RD_SWITCHES)
+    red = os.read(fd, 4); # read 4 bytes and store in red var
+    print("red-s 0x%X"%int.from_bytes(red, 'little'))
+
     os.close(fd)
 
 if __name__ == '__main__':
