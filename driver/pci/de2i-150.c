@@ -19,8 +19,8 @@ MODULE_DESCRIPTION("simple pci driver for DE2i-150 dev board");
 
 /* driver constants */
 
-#define DRIVER_NAME      "my_driver"
-#define FILE_NAME        "mydev"
+#define DRIVER_NAME      "ihs_driver"
+#define FILE_NAME        "de2i-150"
 #define DRIVER_CLASS     "MyModuleClass"
 #define MY_PCI_VENDOR_ID  0x1172
 #define MY_PCI_DEVICE_ID  0x0004
@@ -225,36 +225,37 @@ static ssize_t my_write(struct file* filp, const char __user* buf, size_t count,
 
 	/* send to device */
 	iowrite32(temp_write, write_pointer);
-	printk("my_writer: wrote 0x%X to the %s\n", temp_write, peripheral[wr_name_idx]);
+	printk("my_driver: wrote 0x%X to the %s\n", temp_write, peripheral[wr_name_idx]);
 
 	return retval;
 }
 
 static long int my_ioctl(struct file*, unsigned int cmd, unsigned long arg)
 {
+	printk("my_driver: entrei aqui");
 	switch(cmd){
 	case RD_SWITCHES:
-		read_pointer = bar0_mmio + 0xC080; //TODO: update offset
+		read_pointer = bar0_mmio + 0xC020;
 		rd_name_idx = IDX_SWITCH;
 		break;
 	case RD_PBUTTONS:
-		read_pointer = bar0_mmio + 0xC0A0; //TODO: update offset
+		read_pointer = bar0_mmio + 0xC0A0;
 		rd_name_idx = IDX_PBUTTONS;
 		break;
 	case WR_L_DISPLAY:
-		write_pointer = bar0_mmio + 0xC020; //TODO: update offset
+		write_pointer = bar0_mmio + 0xC040;
 		wr_name_idx = IDX_DISPLAYL;
 		break;
 	case WR_R_DISPLAY:
-		write_pointer = bar0_mmio + 0xC000; //TODO: update offset
+		write_pointer = bar0_mmio + 0xC000;
 		wr_name_idx = IDX_DISPLAYR;
 		break;
 	case WR_RED_LEDS:
-		write_pointer = bar0_mmio + 0xC040; //TODO: update offset
+		write_pointer = bar0_mmio + 0xC080;
 		wr_name_idx = IDX_DISPLAYR;
 		break;
 	case WR_GREEN_LEDS:
-		write_pointer = bar0_mmio + 0xC060; //TODO: update offset
+		write_pointer = bar0_mmio + 0xC060;
 		wr_name_idx = IDX_DISPLAYR;
 		break;
 	default:

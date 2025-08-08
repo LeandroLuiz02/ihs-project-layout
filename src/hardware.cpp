@@ -15,7 +15,7 @@
 
 // Initialize hardware connection
 int init_hardware(GameData* game) {
-    printf("Initializing FPGA hardware...\n");
+    printf("Initializing FPGA hardware....\n");
     
     // Try to open the PCI device file
     game->fpga_fd = open("/dev/de2i-150", O_RDWR);
@@ -27,42 +27,52 @@ int init_hardware(GameData* game) {
     
     printf("FPGA device opened successfully (fd=%d)\n", game->fpga_fd);
     
-    // Test initial communication - clear all LEDs and displays
-    uint32_t zero = 0;
-    
-    // Clear red LEDs
+    // Test initial communication with VISIBLE patterns
+    printf("=== TESTING HARDWARE WITH VISIBLE PATTERNS ===\n");
+
+    // Test red LEDs with a visible pattern
+    printf("Testing WR_RED_LEDS with visible pattern...\n");
     if (ioctl(game->fpga_fd, WR_RED_LEDS) < 0) {
-        printf("Warning: Could not access red LEDs\n");
+        printf("❌ IOCTL WR_RED_LEDS failed: %s\n", strerror(errno));
     } else {
-        write(game->fpga_fd, &zero, sizeof(zero));
-        printf("Red LEDs cleared\n");
+        printf("✓ IOCTL WR_RED_LEDS success\n");
+        uint32_t red_pattern = 0xAAAAAAAA; // Alternating pattern
+        ssize_t written = write(game->fpga_fd, &red_pattern, sizeof(red_pattern));
+        printf("✓ Red LEDs written: %ld bytes, pattern=0x%X\n", written, red_pattern);
+        printf(">> CHECK: Red LEDs should show alternating pattern!\n");
     }
-    
-    // Clear green LEDs  
+
+    // Wait to see the effect
+    sleep(2);
+
+    // Test green LEDs
+    printf("Testing WR_GREEN_LEDS with visible pattern...\n");
     if (ioctl(game->fpga_fd, WR_GREEN_LEDS) < 0) {
-        printf("Warning: Could not access green LEDs\n");
+        printf("❌ IOCTL WR_GREEN_LEDS failed: %s\n", strerror(errno));
     } else {
-        write(game->fpga_fd, &zero, sizeof(zero));
-        printf("Green LEDs cleared\n");
+        printf("✓ IOCTL WR_GREEN_LEDS success\n");
+        uint32_t green_pattern = 0x55555555; // Different alternating pattern
+        ssize_t written = write(game->fpga_fd, &green_pattern, sizeof(green_pattern));
+        printf("✓ Green LEDs written: %ld bytes, pattern=0x%X\n", written, green_pattern);
+        printf(">> CHECK: Green LEDs should show different pattern!\n");
     }
-    
-    // Clear displays
-    uint32_t display_off = 0xFFFFFFFF; // All segments off
-    
-    if (ioctl(game->fpga_fd, WR_L_DISPLAY) < 0) {
-        printf("Warning: Could not access left display\n");
-    } else {
-        write(game->fpga_fd, &display_off, sizeof(display_off));
-        printf("Left display cleared\n");
+
+    sleep(2);
+
+    // Test 7-segment displays with number
+    printf("Testing displays with number 8...\n");
+    uint32_t display_8 = 0xFFFFFF80; // Number 8
+    if (ioctl(game->fpga_fd, WR_L_DISPLAY) >= 0) {
+        write(game->fpga_fd, &display_8, sizeof(display_8));
+        printf("✓ Left display should show '8'\n");
     }
-    
-    if (ioctl(game->fpga_fd, WR_R_DISPLAY) < 0) {
-        printf("Warning: Could not access right display\n");
-    } else {
-        write(game->fpga_fd, &display_off, sizeof(display_off));
-        printf("Right display cleared\n");
+    if (ioctl(game->fpga_fd, WR_R_DISPLAY) >= 0) {
+        write(game->fpga_fd, &display_8, sizeof(display_8));
+        printf("✓ Right display should show '8'\n");
     }
-    
+
+    printf("=== HARDWARE TEST COMPLETE ===\n");
+    printf("If you see the patterns/numbers, hardware is working!\n");
     printf("Hardware initialization complete\n");
     return 0;
 }
@@ -226,3 +236,4 @@ void* hardware_thread(void* arg) {
     printf("Hardware thread finished\n");
     return NULL;
 }
+

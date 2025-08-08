@@ -9,7 +9,7 @@
 #include <errno.h>	/* error codes */
 
 // ioctl commands defined for the pci driver header
-#include "../../ioctl_cmds.h"
+#include "../../include/ioctl_cmds.h"
 
 int main(int argc, char** argv)
 {
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 	}
 
 	unsigned int data = 0x40404079;
-	
+		
 	ioctl(fd, WR_R_DISPLAY);
 	retval = write(fd, &data, sizeof(data));
 	printf("wrote %d bytes\n", retval);
