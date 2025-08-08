@@ -17,10 +17,10 @@ CXX    := $(PREFIX)g++
 OD     := $(PREFIX)objdump
 
 # flags
-CFLAGS   := -Wall -I $(INCDIR) -MMD -MP
-CXXFLAGS := -Wall -I $(INCDIR) -MMD -MP
+CFLAGS   := -Wall -I $(INCDIR) -MMD -MP `pkg-config --cflags sdl2`
+CXXFLAGS := -Wall -I $(INCDIR) -MMD -MP `pkg-config --cflags sdl2`
 ASMFLAGS := -f elf
-LDFLAGS  :=
+LDFLAGS  := -lpthread `pkg-config --libs sdl2` -lSDL2_ttf
 
 ifeq ($(DEBUG),1)
 	BINDIR    := $(DBGDIR)
@@ -102,10 +102,10 @@ endif
 # target for ELF file
 $(BINDIR)/$(PROJECT): $(OBJS)
 ifeq ($(VERBOSE),1)
-	$(LD) $(LDFLAGS) $(OBJS) -o $@
+	$(LD) $(OBJS) -o $@ $(LDFLAGS)
 else
 	@echo -n "[LD] \t./$@\n"
-	@$(LD) $(LDFLAGS) $(OBJS) -o $@
+	@$(LD) $(OBJS) -o $@ $(LDFLAGS)
 endif
 
 # target for disassembly and sections header info

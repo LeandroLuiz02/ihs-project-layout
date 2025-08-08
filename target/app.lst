@@ -1,0 +1,2067 @@
+
+target/release/app:     file format elf64-x86-64
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .interp       0000001c  0000000000000318  0000000000000318  00000318  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .note.gnu.property 00000030  0000000000000338  0000000000000338  00000338  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .note.gnu.build-id 00000024  0000000000000368  0000000000000368  00000368  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .note.ABI-tag 00000020  000000000000038c  000000000000038c  0000038c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .gnu.hash     00000028  00000000000003b0  00000000000003b0  000003b0  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .dynsym       000003a8  00000000000003d8  00000000000003d8  000003d8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .dynstr       00000272  0000000000000780  0000000000000780  00000780  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .gnu.version  0000004e  00000000000009f2  00000000000009f2  000009f2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 .gnu.version_r 00000050  0000000000000a40  0000000000000a40  00000a40  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  9 .rela.dyn     000000c0  0000000000000a90  0000000000000a90  00000a90  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 10 .rela.plt     00000300  0000000000000b50  0000000000000b50  00000b50  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 11 .init         0000001b  0000000000001000  0000000000001000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .plt          00000210  0000000000001020  0000000000001020  00001020  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .plt.got      00000010  0000000000001230  0000000000001230  00001230  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .plt.sec      00000200  0000000000001240  0000000000001240  00001240  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text         00001132  0000000000001440  0000000000001440  00001440  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .fini         0000000d  0000000000002574  0000000000002574  00002574  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .rodata       000003d8  0000000000003000  0000000000003000  00003000  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 18 .eh_frame_hdr 00000094  00000000000033d8  00000000000033d8  000033d8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 19 .eh_frame     000002e8  0000000000003470  0000000000003470  00003470  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 20 .init_array   00000008  0000000000004cb0  0000000000004cb0  00003cb0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 21 .fini_array   00000008  0000000000004cb8  0000000000004cb8  00003cb8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .dynamic      00000200  0000000000004cc0  0000000000004cc0  00003cc0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 23 .got          00000140  0000000000004ec0  0000000000004ec0  00003ec0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 24 .data         00000010  0000000000005000  0000000000005000  00004000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 25 .bss          00000090  0000000000005020  0000000000005020  00004010  2**5
+                  ALLOC
+ 26 .comment      0000002b  0000000000000000  0000000000000000  00004010  2**0
+                  CONTENTS, READONLY
+ 27 .debug_aranges 00000070  0000000000000000  0000000000000000  0000403b  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 28 .debug_info   0000815a  0000000000000000  0000000000000000  000040ab  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 29 .debug_abbrev 0000092d  0000000000000000  0000000000000000  0000c205  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 30 .debug_line   00000fb2  0000000000000000  0000000000000000  0000cb32  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 31 .debug_str    00003f57  0000000000000000  0000000000000000  0000dae4  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 32 .debug_line_str 0000036b  0000000000000000  0000000000000000  00011a3b  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 33 .debug_loclists 0000068c  0000000000000000  0000000000000000  00011da6  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 34 .debug_rnglists 0000013e  0000000000000000  0000000000000000  00012432  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 e1 3f 00 00 	mov    0x3fe1(%rip),%rax        # 4ff0 <__gmon_start__@Base>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 a2 3e 00 00    	push   0x3ea2(%rip)        # 4ec8 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 a4 3e 00 00    	jmp    *0x3ea4(%rip)        # 4ed0 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+    1030:	f3 0f 1e fa          	endbr64
+    1034:	68 00 00 00 00       	push   $0x0
+    1039:	e9 e2 ff ff ff       	jmp    1020 <_init+0x20>
+    103e:	66 90                	xchg   %ax,%ax
+    1040:	f3 0f 1e fa          	endbr64
+    1044:	68 01 00 00 00       	push   $0x1
+    1049:	e9 d2 ff ff ff       	jmp    1020 <_init+0x20>
+    104e:	66 90                	xchg   %ax,%ax
+    1050:	f3 0f 1e fa          	endbr64
+    1054:	68 02 00 00 00       	push   $0x2
+    1059:	e9 c2 ff ff ff       	jmp    1020 <_init+0x20>
+    105e:	66 90                	xchg   %ax,%ax
+    1060:	f3 0f 1e fa          	endbr64
+    1064:	68 03 00 00 00       	push   $0x3
+    1069:	e9 b2 ff ff ff       	jmp    1020 <_init+0x20>
+    106e:	66 90                	xchg   %ax,%ax
+    1070:	f3 0f 1e fa          	endbr64
+    1074:	68 04 00 00 00       	push   $0x4
+    1079:	e9 a2 ff ff ff       	jmp    1020 <_init+0x20>
+    107e:	66 90                	xchg   %ax,%ax
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	68 05 00 00 00       	push   $0x5
+    1089:	e9 92 ff ff ff       	jmp    1020 <_init+0x20>
+    108e:	66 90                	xchg   %ax,%ax
+    1090:	f3 0f 1e fa          	endbr64
+    1094:	68 06 00 00 00       	push   $0x6
+    1099:	e9 82 ff ff ff       	jmp    1020 <_init+0x20>
+    109e:	66 90                	xchg   %ax,%ax
+    10a0:	f3 0f 1e fa          	endbr64
+    10a4:	68 07 00 00 00       	push   $0x7
+    10a9:	e9 72 ff ff ff       	jmp    1020 <_init+0x20>
+    10ae:	66 90                	xchg   %ax,%ax
+    10b0:	f3 0f 1e fa          	endbr64
+    10b4:	68 08 00 00 00       	push   $0x8
+    10b9:	e9 62 ff ff ff       	jmp    1020 <_init+0x20>
+    10be:	66 90                	xchg   %ax,%ax
+    10c0:	f3 0f 1e fa          	endbr64
+    10c4:	68 09 00 00 00       	push   $0x9
+    10c9:	e9 52 ff ff ff       	jmp    1020 <_init+0x20>
+    10ce:	66 90                	xchg   %ax,%ax
+    10d0:	f3 0f 1e fa          	endbr64
+    10d4:	68 0a 00 00 00       	push   $0xa
+    10d9:	e9 42 ff ff ff       	jmp    1020 <_init+0x20>
+    10de:	66 90                	xchg   %ax,%ax
+    10e0:	f3 0f 1e fa          	endbr64
+    10e4:	68 0b 00 00 00       	push   $0xb
+    10e9:	e9 32 ff ff ff       	jmp    1020 <_init+0x20>
+    10ee:	66 90                	xchg   %ax,%ax
+    10f0:	f3 0f 1e fa          	endbr64
+    10f4:	68 0c 00 00 00       	push   $0xc
+    10f9:	e9 22 ff ff ff       	jmp    1020 <_init+0x20>
+    10fe:	66 90                	xchg   %ax,%ax
+    1100:	f3 0f 1e fa          	endbr64
+    1104:	68 0d 00 00 00       	push   $0xd
+    1109:	e9 12 ff ff ff       	jmp    1020 <_init+0x20>
+    110e:	66 90                	xchg   %ax,%ax
+    1110:	f3 0f 1e fa          	endbr64
+    1114:	68 0e 00 00 00       	push   $0xe
+    1119:	e9 02 ff ff ff       	jmp    1020 <_init+0x20>
+    111e:	66 90                	xchg   %ax,%ax
+    1120:	f3 0f 1e fa          	endbr64
+    1124:	68 0f 00 00 00       	push   $0xf
+    1129:	e9 f2 fe ff ff       	jmp    1020 <_init+0x20>
+    112e:	66 90                	xchg   %ax,%ax
+    1130:	f3 0f 1e fa          	endbr64
+    1134:	68 10 00 00 00       	push   $0x10
+    1139:	e9 e2 fe ff ff       	jmp    1020 <_init+0x20>
+    113e:	66 90                	xchg   %ax,%ax
+    1140:	f3 0f 1e fa          	endbr64
+    1144:	68 11 00 00 00       	push   $0x11
+    1149:	e9 d2 fe ff ff       	jmp    1020 <_init+0x20>
+    114e:	66 90                	xchg   %ax,%ax
+    1150:	f3 0f 1e fa          	endbr64
+    1154:	68 12 00 00 00       	push   $0x12
+    1159:	e9 c2 fe ff ff       	jmp    1020 <_init+0x20>
+    115e:	66 90                	xchg   %ax,%ax
+    1160:	f3 0f 1e fa          	endbr64
+    1164:	68 13 00 00 00       	push   $0x13
+    1169:	e9 b2 fe ff ff       	jmp    1020 <_init+0x20>
+    116e:	66 90                	xchg   %ax,%ax
+    1170:	f3 0f 1e fa          	endbr64
+    1174:	68 14 00 00 00       	push   $0x14
+    1179:	e9 a2 fe ff ff       	jmp    1020 <_init+0x20>
+    117e:	66 90                	xchg   %ax,%ax
+    1180:	f3 0f 1e fa          	endbr64
+    1184:	68 15 00 00 00       	push   $0x15
+    1189:	e9 92 fe ff ff       	jmp    1020 <_init+0x20>
+    118e:	66 90                	xchg   %ax,%ax
+    1190:	f3 0f 1e fa          	endbr64
+    1194:	68 16 00 00 00       	push   $0x16
+    1199:	e9 82 fe ff ff       	jmp    1020 <_init+0x20>
+    119e:	66 90                	xchg   %ax,%ax
+    11a0:	f3 0f 1e fa          	endbr64
+    11a4:	68 17 00 00 00       	push   $0x17
+    11a9:	e9 72 fe ff ff       	jmp    1020 <_init+0x20>
+    11ae:	66 90                	xchg   %ax,%ax
+    11b0:	f3 0f 1e fa          	endbr64
+    11b4:	68 18 00 00 00       	push   $0x18
+    11b9:	e9 62 fe ff ff       	jmp    1020 <_init+0x20>
+    11be:	66 90                	xchg   %ax,%ax
+    11c0:	f3 0f 1e fa          	endbr64
+    11c4:	68 19 00 00 00       	push   $0x19
+    11c9:	e9 52 fe ff ff       	jmp    1020 <_init+0x20>
+    11ce:	66 90                	xchg   %ax,%ax
+    11d0:	f3 0f 1e fa          	endbr64
+    11d4:	68 1a 00 00 00       	push   $0x1a
+    11d9:	e9 42 fe ff ff       	jmp    1020 <_init+0x20>
+    11de:	66 90                	xchg   %ax,%ax
+    11e0:	f3 0f 1e fa          	endbr64
+    11e4:	68 1b 00 00 00       	push   $0x1b
+    11e9:	e9 32 fe ff ff       	jmp    1020 <_init+0x20>
+    11ee:	66 90                	xchg   %ax,%ax
+    11f0:	f3 0f 1e fa          	endbr64
+    11f4:	68 1c 00 00 00       	push   $0x1c
+    11f9:	e9 22 fe ff ff       	jmp    1020 <_init+0x20>
+    11fe:	66 90                	xchg   %ax,%ax
+    1200:	f3 0f 1e fa          	endbr64
+    1204:	68 1d 00 00 00       	push   $0x1d
+    1209:	e9 12 fe ff ff       	jmp    1020 <_init+0x20>
+    120e:	66 90                	xchg   %ax,%ax
+    1210:	f3 0f 1e fa          	endbr64
+    1214:	68 1e 00 00 00       	push   $0x1e
+    1219:	e9 02 fe ff ff       	jmp    1020 <_init+0x20>
+    121e:	66 90                	xchg   %ax,%ax
+    1220:	f3 0f 1e fa          	endbr64
+    1224:	68 1f 00 00 00       	push   $0x1f
+    1229:	e9 f2 fd ff ff       	jmp    1020 <_init+0x20>
+    122e:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .plt.got:
+
+0000000000001230 <__cxa_finalize@plt>:
+    1230:	f3 0f 1e fa          	endbr64
+    1234:	ff 25 9e 3d 00 00    	jmp    *0x3d9e(%rip)        # 4fd8 <__cxa_finalize@GLIBC_2.2.5>
+    123a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+Disassembly of section .plt.sec:
+
+0000000000001240 <__printf_chk@plt>:
+    1240:	f3 0f 1e fa          	endbr64
+    1244:	ff 25 8e 3c 00 00    	jmp    *0x3c8e(%rip)        # 4ed8 <__printf_chk@GLIBC_2.3.4>
+    124a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001250 <SDL_DestroyWindow@plt>:
+    1250:	f3 0f 1e fa          	endbr64
+    1254:	ff 25 86 3c 00 00    	jmp    *0x3c86(%rip)        # 4ee0 <SDL_DestroyWindow@Base>
+    125a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001260 <SDL_CreateRenderer@plt>:
+    1260:	f3 0f 1e fa          	endbr64
+    1264:	ff 25 7e 3c 00 00    	jmp    *0x3c7e(%rip)        # 4ee8 <SDL_CreateRenderer@Base>
+    126a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001270 <__errno_location@plt>:
+    1270:	f3 0f 1e fa          	endbr64
+    1274:	ff 25 76 3c 00 00    	jmp    *0x3c76(%rip)        # 4ef0 <__errno_location@GLIBC_2.2.5>
+    127a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001280 <SDL_CreateWindow@plt>:
+    1280:	f3 0f 1e fa          	endbr64
+    1284:	ff 25 6e 3c 00 00    	jmp    *0x3c6e(%rip)        # 4ef8 <SDL_CreateWindow@Base>
+    128a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001290 <SDL_Quit@plt>:
+    1290:	f3 0f 1e fa          	endbr64
+    1294:	ff 25 66 3c 00 00    	jmp    *0x3c66(%rip)        # 4f00 <SDL_Quit@Base>
+    129a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012a0 <SDL_RenderPresent@plt>:
+    12a0:	f3 0f 1e fa          	endbr64
+    12a4:	ff 25 5e 3c 00 00    	jmp    *0x3c5e(%rip)        # 4f08 <SDL_RenderPresent@Base>
+    12aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012b0 <strerror@plt>:
+    12b0:	f3 0f 1e fa          	endbr64
+    12b4:	ff 25 56 3c 00 00    	jmp    *0x3c56(%rip)        # 4f10 <strerror@GLIBC_2.2.5>
+    12ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012c0 <write@plt>:
+    12c0:	f3 0f 1e fa          	endbr64
+    12c4:	ff 25 4e 3c 00 00    	jmp    *0x3c4e(%rip)        # 4f18 <write@GLIBC_2.2.5>
+    12ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012d0 <SDL_DestroyRenderer@plt>:
+    12d0:	f3 0f 1e fa          	endbr64
+    12d4:	ff 25 46 3c 00 00    	jmp    *0x3c46(%rip)        # 4f20 <SDL_DestroyRenderer@Base>
+    12da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012e0 <SDL_RenderFillRect@plt>:
+    12e0:	f3 0f 1e fa          	endbr64
+    12e4:	ff 25 3e 3c 00 00    	jmp    *0x3c3e(%rip)        # 4f28 <SDL_RenderFillRect@Base>
+    12ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000012f0 <SDL_PollEvent@plt>:
+    12f0:	f3 0f 1e fa          	endbr64
+    12f4:	ff 25 36 3c 00 00    	jmp    *0x3c36(%rip)        # 4f30 <SDL_PollEvent@Base>
+    12fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001300 <SDL_Delay@plt>:
+    1300:	f3 0f 1e fa          	endbr64
+    1304:	ff 25 2e 3c 00 00    	jmp    *0x3c2e(%rip)        # 4f38 <SDL_Delay@Base>
+    130a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001310 <open@plt>:
+    1310:	f3 0f 1e fa          	endbr64
+    1314:	ff 25 26 3c 00 00    	jmp    *0x3c26(%rip)        # 4f40 <open@GLIBC_2.2.5>
+    131a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001320 <SDL_GetError@plt>:
+    1320:	f3 0f 1e fa          	endbr64
+    1324:	ff 25 1e 3c 00 00    	jmp    *0x3c1e(%rip)        # 4f48 <SDL_GetError@Base>
+    132a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001330 <pthread_mutex_unlock@plt>:
+    1330:	f3 0f 1e fa          	endbr64
+    1334:	ff 25 16 3c 00 00    	jmp    *0x3c16(%rip)        # 4f50 <pthread_mutex_unlock@GLIBC_2.2.5>
+    133a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001340 <pthread_join@plt>:
+    1340:	f3 0f 1e fa          	endbr64
+    1344:	ff 25 0e 3c 00 00    	jmp    *0x3c0e(%rip)        # 4f58 <pthread_join@GLIBC_2.34>
+    134a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001350 <SDL_Init@plt>:
+    1350:	f3 0f 1e fa          	endbr64
+    1354:	ff 25 06 3c 00 00    	jmp    *0x3c06(%rip)        # 4f60 <SDL_Init@Base>
+    135a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001360 <SDL_RenderClear@plt>:
+    1360:	f3 0f 1e fa          	endbr64
+    1364:	ff 25 fe 3b 00 00    	jmp    *0x3bfe(%rip)        # 4f68 <SDL_RenderClear@Base>
+    136a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001370 <SDL_HasIntersection@plt>:
+    1370:	f3 0f 1e fa          	endbr64
+    1374:	ff 25 f6 3b 00 00    	jmp    *0x3bf6(%rip)        # 4f70 <SDL_HasIntersection@Base>
+    137a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001380 <__stack_chk_fail@plt>:
+    1380:	f3 0f 1e fa          	endbr64
+    1384:	ff 25 ee 3b 00 00    	jmp    *0x3bee(%rip)        # 4f78 <__stack_chk_fail@GLIBC_2.4>
+    138a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001390 <pthread_mutex_destroy@plt>:
+    1390:	f3 0f 1e fa          	endbr64
+    1394:	ff 25 e6 3b 00 00    	jmp    *0x3be6(%rip)        # 4f80 <pthread_mutex_destroy@GLIBC_2.2.5>
+    139a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013a0 <ioctl@plt>:
+    13a0:	f3 0f 1e fa          	endbr64
+    13a4:	ff 25 de 3b 00 00    	jmp    *0x3bde(%rip)        # 4f88 <ioctl@GLIBC_2.2.5>
+    13aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013b0 <usleep@plt>:
+    13b0:	f3 0f 1e fa          	endbr64
+    13b4:	ff 25 d6 3b 00 00    	jmp    *0x3bd6(%rip)        # 4f90 <usleep@GLIBC_2.2.5>
+    13ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013c0 <SDL_SetRenderDrawColor@plt>:
+    13c0:	f3 0f 1e fa          	endbr64
+    13c4:	ff 25 ce 3b 00 00    	jmp    *0x3bce(%rip)        # 4f98 <SDL_SetRenderDrawColor@Base>
+    13ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013d0 <read@plt>:
+    13d0:	f3 0f 1e fa          	endbr64
+    13d4:	ff 25 c6 3b 00 00    	jmp    *0x3bc6(%rip)        # 4fa0 <read@GLIBC_2.2.5>
+    13da:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013e0 <pthread_mutex_lock@plt>:
+    13e0:	f3 0f 1e fa          	endbr64
+    13e4:	ff 25 be 3b 00 00    	jmp    *0x3bbe(%rip)        # 4fa8 <pthread_mutex_lock@GLIBC_2.2.5>
+    13ea:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000013f0 <pthread_mutex_init@plt>:
+    13f0:	f3 0f 1e fa          	endbr64
+    13f4:	ff 25 b6 3b 00 00    	jmp    *0x3bb6(%rip)        # 4fb0 <pthread_mutex_init@GLIBC_2.2.5>
+    13fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001400 <puts@plt>:
+    1400:	f3 0f 1e fa          	endbr64
+    1404:	ff 25 ae 3b 00 00    	jmp    *0x3bae(%rip)        # 4fb8 <puts@GLIBC_2.2.5>
+    140a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001410 <pthread_create@plt>:
+    1410:	f3 0f 1e fa          	endbr64
+    1414:	ff 25 a6 3b 00 00    	jmp    *0x3ba6(%rip)        # 4fc0 <pthread_create@GLIBC_2.34>
+    141a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001420 <close@plt>:
+    1420:	f3 0f 1e fa          	endbr64
+    1424:	ff 25 9e 3b 00 00    	jmp    *0x3b9e(%rip)        # 4fc8 <close@GLIBC_2.2.5>
+    142a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001430 <SDL_GetKeyboardState@plt>:
+    1430:	f3 0f 1e fa          	endbr64
+    1434:	ff 25 96 3b 00 00    	jmp    *0x3b96(%rip)        # 4fd0 <SDL_GetKeyboardState@Base>
+    143a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+Disassembly of section .text:
+
+0000000000001440 <main>:
+    pthread_mutex_unlock(&game->mutex);
+    
+    SDL_RenderPresent(renderer);
+}
+
+int main(int argc, char** argv) {
+    1440:	f3 0f 1e fa          	endbr64
+    1444:	41 55                	push   %r13
+}
+
+__fortify_function int
+printf (const char *__restrict __fmt, ...)
+{
+  return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+    1446:	48 8d 3d 28 1c 00 00 	lea    0x1c28(%rip),%rdi        # 3075 <_IO_stdin_used+0x75>
+    pthread_mutex_init(&game->mutex, NULL);
+    144d:	4c 8d 2d 2c 3c 00 00 	lea    0x3c2c(%rip),%r13        # 5080 <game_data+0x40>
+int main(int argc, char** argv) {
+    1454:	41 54                	push   %r12
+    1456:	55                   	push   %rbp
+    game->state = GAME_MENU;
+    1457:	49 8d 6d c0          	lea    -0x40(%r13),%rbp
+int main(int argc, char** argv) {
+    145b:	53                   	push   %rbx
+    145c:	48 83 ec 68          	sub    $0x68,%rsp
+    1460:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1467:	00 00 
+    1469:	48 89 44 24 58       	mov    %rax,0x58(%rsp)
+    146e:	31 c0                	xor    %eax,%eax
+    SDL_Window* window = NULL;
+    1470:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+    1477:	00 00 
+    SDL_Renderer* renderer = NULL;
+    1479:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+    1480:	00 00 
+    1482:	e8 79 ff ff ff       	call   1400 <puts@plt>
+    pthread_mutex_init(&game->mutex, NULL);
+    1487:	31 f6                	xor    %esi,%esi
+    1489:	4c 89 ef             	mov    %r13,%rdi
+    148c:	e8 5f ff ff ff       	call   13f0 <pthread_mutex_init@plt>
+    game->player1.x = 50;
+    1491:	48 8b 05 18 1f 00 00 	mov    0x1f18(%rip),%rax        # 33b0 <_IO_stdin_used+0x3b0>
+    game->ball.x = WINDOW_WIDTH / 2;
+    1498:	0f 28 05 d1 1e 00 00 	movaps 0x1ed1(%rip),%xmm0        # 3370 <_IO_stdin_used+0x370>
+    
+    // Initialize game
+    init_game(&game_data);
+    
+    // Initialize hardware
+    if (init_hardware(&game_data) < 0) {
+    149f:	48 89 ef             	mov    %rbp,%rdi
+    game->state = GAME_MENU;
+    14a2:	c7 05 94 3b 00 00 00 	movl   $0x0,0x3b94(%rip)        # 5040 <game_data>
+    14a9:	00 00 00 
+    game->player1.x = 50;
+    14ac:	48 89 05 a1 3b 00 00 	mov    %rax,0x3ba1(%rip)        # 5054 <game_data+0x14>
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    14b3:	48 8b 05 fe 1e 00 00 	mov    0x1efe(%rip),%rax        # 33b8 <_IO_stdin_used+0x3b8>
+    game->running = 1;
+    14ba:	c7 05 e4 3b 00 00 01 	movl   $0x1,0x3be4(%rip)        # 50a8 <game_data+0x68>
+    14c1:	00 00 00 
+    game->player1.score = 0;
+    14c4:	c7 05 8e 3b 00 00 00 	movl   $0x0,0x3b8e(%rip)        # 505c <game_data+0x1c>
+    14cb:	00 00 00 
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    14ce:	48 89 05 8b 3b 00 00 	mov    %rax,0x3b8b(%rip)        # 5060 <game_data+0x20>
+    game->player2.score = 0;
+    14d5:	c7 05 89 3b 00 00 00 	movl   $0x0,0x3b89(%rip)        # 5068 <game_data+0x28>
+    14dc:	00 00 00 
+    game->ball.x = WINDOW_WIDTH / 2;
+    14df:	0f 11 05 5e 3b 00 00 	movups %xmm0,0x3b5e(%rip)        # 5044 <game_data+0x4>
+    if (init_hardware(&game_data) < 0) {
+    14e6:	e8 e5 07 00 00       	call   1cd0 <_Z13init_hardwareP8GameData>
+    14eb:	85 c0                	test   %eax,%eax
+    14ed:	0f 88 1c 01 00 00    	js     160f <main+0x1cf>
+        printf("Warning: Hardware initialization failed, continuing without FPGA features\n");
+    }
+    
+    // Initialize graphics
+    if (init_graphics(&window, &renderer) < 0) {
+    14f3:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    14f8:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+    14fd:	e8 1e 02 00 00       	call   1720 <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer>
+    1502:	85 c0                	test   %eax,%eax
+    1504:	0f 88 16 01 00 00    	js     1620 <main+0x1e0>
+        return -1;
+    }
+    
+    // Start hardware thread
+    pthread_create(&hardware_thread_id, NULL, hardware_thread, &game_data);
+    150a:	48 8d 7c 24 18       	lea    0x18(%rsp),%rdi
+    150f:	48 89 e9             	mov    %rbp,%rcx
+    1512:	48 8d 5c 24 20       	lea    0x20(%rsp),%rbx
+    1517:	31 f6                	xor    %esi,%esi
+    1519:	48 8d 15 40 0e 00 00 	lea    0xe40(%rip),%rdx        # 2360 <_Z15hardware_threadPv>
+    1520:	e8 eb fe ff ff       	call   1410 <pthread_create@plt>
+    1525:	48 8d 3d a4 1c 00 00 	lea    0x1ca4(%rip),%rdi        # 31d0 <_IO_stdin_used+0x1d0>
+    152c:	e8 cf fe ff ff       	call   1400 <puts@plt>
+    
+    printf("Game initialized. Press SPACE to start, W/S and UP/DOWN to control paddles\n");
+    
+    // Main game loop
+    while (game_data.running) {
+    1531:	8b 15 71 3b 00 00    	mov    0x3b71(%rip),%edx        # 50a8 <game_data+0x68>
+    
+    // Cleanup
+    pthread_join(hardware_thread_id, NULL);
+    cleanup_hardware(&game_data);
+    
+    SDL_DestroyRenderer(renderer);
+    1537:	4c 8b 64 24 10       	mov    0x10(%rsp),%r12
+    while (game_data.running) {
+    153c:	85 d2                	test   %edx,%edx
+    153e:	75 16                	jne    1556 <main+0x116>
+    1540:	eb 59                	jmp    159b <main+0x15b>
+    1542:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+            if (event.type == SDL_QUIT) {
+    1548:	81 7c 24 20 00 01 00 	cmpl   $0x100,0x20(%rsp)
+    154f:	00 
+    1550:	0f 84 aa 00 00 00    	je     1600 <main+0x1c0>
+        while (SDL_PollEvent(&event)) {
+    1556:	48 89 df             	mov    %rbx,%rdi
+    1559:	e8 92 fd ff ff       	call   12f0 <SDL_PollEvent@plt>
+    155e:	85 c0                	test   %eax,%eax
+    1560:	75 e6                	jne    1548 <main+0x108>
+        const Uint8* keystate = SDL_GetKeyboardState(NULL);
+    1562:	31 ff                	xor    %edi,%edi
+    1564:	e8 c7 fe ff ff       	call   1430 <SDL_GetKeyboardState@plt>
+        handle_input(&game_data, keystate);
+    1569:	48 89 ef             	mov    %rbp,%rdi
+        const Uint8* keystate = SDL_GetKeyboardState(NULL);
+    156c:	48 89 c6             	mov    %rax,%rsi
+        handle_input(&game_data, keystate);
+    156f:	e8 9c 04 00 00       	call   1a10 <_Z12handle_inputP8GameDataPKh>
+        update_game(&game_data);
+    1574:	48 89 ef             	mov    %rbp,%rdi
+    1577:	e8 d4 02 00 00       	call   1850 <_Z11update_gameP8GameData>
+        render_game(renderer, &game_data);
+    157c:	48 89 ee             	mov    %rbp,%rsi
+    157f:	4c 89 e7             	mov    %r12,%rdi
+    1582:	e8 f9 05 00 00       	call   1b80 <_Z11render_gameP12SDL_RendererP8GameData>
+        SDL_Delay(16); // ~60 FPS
+    1587:	bf 10 00 00 00       	mov    $0x10,%edi
+    158c:	e8 6f fd ff ff       	call   1300 <SDL_Delay@plt>
+    while (game_data.running) {
+    1591:	8b 05 11 3b 00 00    	mov    0x3b11(%rip),%eax        # 50a8 <game_data+0x68>
+    1597:	85 c0                	test   %eax,%eax
+    1599:	75 bb                	jne    1556 <main+0x116>
+    pthread_join(hardware_thread_id, NULL);
+    159b:	48 8b 7c 24 18       	mov    0x18(%rsp),%rdi
+    15a0:	31 f6                	xor    %esi,%esi
+    15a2:	e8 99 fd ff ff       	call   1340 <pthread_join@plt>
+    cleanup_hardware(&game_data);
+    15a7:	48 89 ef             	mov    %rbp,%rdi
+    15aa:	e8 21 09 00 00       	call   1ed0 <_Z16cleanup_hardwareP8GameData>
+    SDL_DestroyRenderer(renderer);
+    15af:	4c 89 e7             	mov    %r12,%rdi
+    15b2:	e8 19 fd ff ff       	call   12d0 <SDL_DestroyRenderer@plt>
+    SDL_DestroyWindow(window);
+    15b7:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    15bc:	e8 8f fc ff ff       	call   1250 <SDL_DestroyWindow@plt>
+    SDL_Quit();
+    15c1:	e8 ca fc ff ff       	call   1290 <SDL_Quit@plt>
+    
+    pthread_mutex_destroy(&game_data.mutex);
+    15c6:	4c 89 ef             	mov    %r13,%rdi
+    15c9:	e8 c2 fd ff ff       	call   1390 <pthread_mutex_destroy@plt>
+    15ce:	48 8d 3d bb 1a 00 00 	lea    0x1abb(%rip),%rdi        # 3090 <_IO_stdin_used+0x90>
+    15d5:	e8 26 fe ff ff       	call   1400 <puts@plt>
+    
+    printf("Game finished.\n");
+    return 0;
+    15da:	31 c0                	xor    %eax,%eax
+}
+    15dc:	48 8b 54 24 58       	mov    0x58(%rsp),%rdx
+    15e1:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+    15e8:	00 00 
+    15ea:	75 39                	jne    1625 <main+0x1e5>
+    15ec:	48 83 c4 68          	add    $0x68,%rsp
+    15f0:	5b                   	pop    %rbx
+    15f1:	5d                   	pop    %rbp
+    15f2:	41 5c                	pop    %r12
+    15f4:	41 5d                	pop    %r13
+    15f6:	c3                   	ret
+    15f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    15fe:	00 00 
+                game_data.running = 0;
+    1600:	c7 05 9e 3a 00 00 00 	movl   $0x0,0x3a9e(%rip)        # 50a8 <game_data+0x68>
+    1607:	00 00 00 
+    160a:	e9 47 ff ff ff       	jmp    1556 <main+0x116>
+    160f:	48 8d 3d 6a 1b 00 00 	lea    0x1b6a(%rip),%rdi        # 3180 <_IO_stdin_used+0x180>
+    1616:	e8 e5 fd ff ff       	call   1400 <puts@plt>
+    161b:	e9 d3 fe ff ff       	jmp    14f3 <main+0xb3>
+        return -1;
+    1620:	83 c8 ff             	or     $0xffffffff,%eax
+    1623:	eb b7                	jmp    15dc <main+0x19c>
+}
+    1625:	e8 56 fd ff ff       	call   1380 <__stack_chk_fail@plt>
+    162a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001630 <_start>:
+    1630:	f3 0f 1e fa          	endbr64
+    1634:	31 ed                	xor    %ebp,%ebp
+    1636:	49 89 d1             	mov    %rdx,%r9
+    1639:	5e                   	pop    %rsi
+    163a:	48 89 e2             	mov    %rsp,%rdx
+    163d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1641:	50                   	push   %rax
+    1642:	54                   	push   %rsp
+    1643:	45 31 c0             	xor    %r8d,%r8d
+    1646:	31 c9                	xor    %ecx,%ecx
+    1648:	48 8d 3d f1 fd ff ff 	lea    -0x20f(%rip),%rdi        # 1440 <main>
+    164f:	ff 15 8b 39 00 00    	call   *0x398b(%rip)        # 4fe0 <__libc_start_main@GLIBC_2.34>
+    1655:	f4                   	hlt
+    1656:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    165d:	00 00 00 
+
+0000000000001660 <deregister_tm_clones>:
+    1660:	48 8d 3d a9 39 00 00 	lea    0x39a9(%rip),%rdi        # 5010 <__TMC_END__>
+    1667:	48 8d 05 a2 39 00 00 	lea    0x39a2(%rip),%rax        # 5010 <__TMC_END__>
+    166e:	48 39 f8             	cmp    %rdi,%rax
+    1671:	74 15                	je     1688 <deregister_tm_clones+0x28>
+    1673:	48 8b 05 6e 39 00 00 	mov    0x396e(%rip),%rax        # 4fe8 <_ITM_deregisterTMCloneTable@Base>
+    167a:	48 85 c0             	test   %rax,%rax
+    167d:	74 09                	je     1688 <deregister_tm_clones+0x28>
+    167f:	ff e0                	jmp    *%rax
+    1681:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1688:	c3                   	ret
+    1689:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001690 <register_tm_clones>:
+    1690:	48 8d 3d 79 39 00 00 	lea    0x3979(%rip),%rdi        # 5010 <__TMC_END__>
+    1697:	48 8d 35 72 39 00 00 	lea    0x3972(%rip),%rsi        # 5010 <__TMC_END__>
+    169e:	48 29 fe             	sub    %rdi,%rsi
+    16a1:	48 89 f0             	mov    %rsi,%rax
+    16a4:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    16a8:	48 c1 f8 03          	sar    $0x3,%rax
+    16ac:	48 01 c6             	add    %rax,%rsi
+    16af:	48 d1 fe             	sar    $1,%rsi
+    16b2:	74 14                	je     16c8 <register_tm_clones+0x38>
+    16b4:	48 8b 05 3d 39 00 00 	mov    0x393d(%rip),%rax        # 4ff8 <_ITM_registerTMCloneTable@Base>
+    16bb:	48 85 c0             	test   %rax,%rax
+    16be:	74 08                	je     16c8 <register_tm_clones+0x38>
+    16c0:	ff e0                	jmp    *%rax
+    16c2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    16c8:	c3                   	ret
+    16c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000016d0 <__do_global_dtors_aux>:
+    16d0:	f3 0f 1e fa          	endbr64
+    16d4:	80 3d 45 39 00 00 00 	cmpb   $0x0,0x3945(%rip)        # 5020 <completed.0>
+    16db:	75 2b                	jne    1708 <__do_global_dtors_aux+0x38>
+    16dd:	55                   	push   %rbp
+    16de:	48 83 3d f2 38 00 00 	cmpq   $0x0,0x38f2(%rip)        # 4fd8 <__cxa_finalize@GLIBC_2.2.5>
+    16e5:	00 
+    16e6:	48 89 e5             	mov    %rsp,%rbp
+    16e9:	74 0c                	je     16f7 <__do_global_dtors_aux+0x27>
+    16eb:	48 8b 3d 16 39 00 00 	mov    0x3916(%rip),%rdi        # 5008 <__dso_handle>
+    16f2:	e8 39 fb ff ff       	call   1230 <__cxa_finalize@plt>
+    16f7:	e8 64 ff ff ff       	call   1660 <deregister_tm_clones>
+    16fc:	c6 05 1d 39 00 00 01 	movb   $0x1,0x391d(%rip)        # 5020 <completed.0>
+    1703:	5d                   	pop    %rbp
+    1704:	c3                   	ret
+    1705:	0f 1f 00             	nopl   (%rax)
+    1708:	c3                   	ret
+    1709:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001710 <frame_dummy>:
+    1710:	f3 0f 1e fa          	endbr64
+    1714:	e9 77 ff ff ff       	jmp    1690 <register_tm_clones>
+    1719:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001720 <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer>:
+int init_graphics(SDL_Window** window, SDL_Renderer** renderer) {
+    1720:	f3 0f 1e fa          	endbr64
+    1724:	55                   	push   %rbp
+    1725:	48 89 fd             	mov    %rdi,%rbp
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    1728:	bf 20 00 00 00       	mov    $0x20,%edi
+int init_graphics(SDL_Window** window, SDL_Renderer** renderer) {
+    172d:	53                   	push   %rbx
+    172e:	48 89 f3             	mov    %rsi,%rbx
+    1731:	48 83 ec 08          	sub    $0x8,%rsp
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    1735:	e8 16 fc ff ff       	call   1350 <SDL_Init@plt>
+    173a:	85 c0                	test   %eax,%eax
+    173c:	78 53                	js     1791 <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0x71>
+    *window = SDL_CreateWindow("FPGA Pong", 
+    173e:	41 b9 04 00 00 00    	mov    $0x4,%r9d
+    1744:	41 b8 58 02 00 00    	mov    $0x258,%r8d
+    174a:	b9 20 03 00 00       	mov    $0x320,%ecx
+    174f:	ba 00 00 ff 2f       	mov    $0x2fff0000,%edx
+    1754:	48 8d 3d d6 18 00 00 	lea    0x18d6(%rip),%rdi        # 3031 <_IO_stdin_used+0x31>
+    175b:	be 00 00 ff 2f       	mov    $0x2fff0000,%esi
+    1760:	e8 1b fb ff ff       	call   1280 <SDL_CreateWindow@plt>
+    1765:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    1769:	48 89 c7             	mov    %rax,%rdi
+    if (!*window) {
+    176c:	48 85 c0             	test   %rax,%rax
+    176f:	74 42                	je     17b3 <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0x93>
+    *renderer = SDL_CreateRenderer(*window, -1, SDL_RENDERER_ACCELERATED);
+    1771:	ba 02 00 00 00       	mov    $0x2,%edx
+    1776:	be ff ff ff ff       	mov    $0xffffffff,%esi
+    177b:	e8 e0 fa ff ff       	call   1260 <SDL_CreateRenderer@plt>
+    1780:	48 89 03             	mov    %rax,(%rbx)
+    if (!*renderer) {
+    1783:	48 85 c0             	test   %rax,%rax
+    1786:	74 48                	je     17d0 <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0xb0>
+    return 0;
+    1788:	31 c0                	xor    %eax,%eax
+}
+    178a:	48 83 c4 08          	add    $0x8,%rsp
+    178e:	5b                   	pop    %rbx
+    178f:	5d                   	pop    %rbp
+    1790:	c3                   	ret
+        printf("SDL init failed: %s\n", SDL_GetError());
+    1791:	e8 8a fb ff ff       	call   1320 <SDL_GetError@plt>
+    1796:	48 8d 35 7f 18 00 00 	lea    0x187f(%rip),%rsi        # 301c <_IO_stdin_used+0x1c>
+    179d:	bf 02 00 00 00       	mov    $0x2,%edi
+    17a2:	48 89 c2             	mov    %rax,%rdx
+    17a5:	31 c0                	xor    %eax,%eax
+    17a7:	e8 94 fa ff ff       	call   1240 <__printf_chk@plt>
+        return -1;
+    17ac:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    17b1:	eb d7                	jmp    178a <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0x6a>
+        printf("Window creation failed: %s\n", SDL_GetError());
+    17b3:	e8 68 fb ff ff       	call   1320 <SDL_GetError@plt>
+    17b8:	48 8d 35 7c 18 00 00 	lea    0x187c(%rip),%rsi        # 303b <_IO_stdin_used+0x3b>
+    17bf:	bf 02 00 00 00       	mov    $0x2,%edi
+    17c4:	48 89 c2             	mov    %rax,%rdx
+    17c7:	31 c0                	xor    %eax,%eax
+    17c9:	e8 72 fa ff ff       	call   1240 <__printf_chk@plt>
+        return -1;
+    17ce:	eb dc                	jmp    17ac <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0x8c>
+        printf("Renderer creation failed: %s\n", SDL_GetError());
+    17d0:	e8 4b fb ff ff       	call   1320 <SDL_GetError@plt>
+    17d5:	48 8d 35 7b 18 00 00 	lea    0x187b(%rip),%rsi        # 3057 <_IO_stdin_used+0x57>
+    17dc:	bf 02 00 00 00       	mov    $0x2,%edi
+    17e1:	48 89 c2             	mov    %rax,%rdx
+    17e4:	31 c0                	xor    %eax,%eax
+    17e6:	e8 55 fa ff ff       	call   1240 <__printf_chk@plt>
+        return -1;
+    17eb:	eb bf                	jmp    17ac <_Z13init_graphicsPP10SDL_WindowPP12SDL_Renderer+0x8c>
+    17ed:	0f 1f 00             	nopl   (%rax)
+
+00000000000017f0 <_Z9init_gameP8GameData>:
+void init_game(GameData* game) {
+    17f0:	f3 0f 1e fa          	endbr64
+    17f4:	53                   	push   %rbx
+    pthread_mutex_init(&game->mutex, NULL);
+    17f5:	31 f6                	xor    %esi,%esi
+void init_game(GameData* game) {
+    17f7:	48 89 fb             	mov    %rdi,%rbx
+    pthread_mutex_init(&game->mutex, NULL);
+    17fa:	48 8d 7f 40          	lea    0x40(%rdi),%rdi
+    17fe:	e8 ed fb ff ff       	call   13f0 <pthread_mutex_init@plt>
+    game->player1.x = 50;
+    1803:	48 8b 05 a6 1b 00 00 	mov    0x1ba6(%rip),%rax        # 33b0 <_IO_stdin_used+0x3b0>
+    game->ball.x = WINDOW_WIDTH / 2;
+    180a:	0f 28 05 5f 1b 00 00 	movaps 0x1b5f(%rip),%xmm0        # 3370 <_IO_stdin_used+0x370>
+    game->state = GAME_MENU;
+    1811:	c7 03 00 00 00 00    	movl   $0x0,(%rbx)
+    game->running = 1;
+    1817:	c7 43 68 01 00 00 00 	movl   $0x1,0x68(%rbx)
+    game->player1.x = 50;
+    181e:	48 89 43 14          	mov    %rax,0x14(%rbx)
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    1822:	48 8b 05 8f 1b 00 00 	mov    0x1b8f(%rip),%rax        # 33b8 <_IO_stdin_used+0x3b8>
+    game->player1.score = 0;
+    1829:	c7 43 1c 00 00 00 00 	movl   $0x0,0x1c(%rbx)
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    1830:	48 89 43 20          	mov    %rax,0x20(%rbx)
+    game->player2.score = 0;
+    1834:	c7 43 28 00 00 00 00 	movl   $0x0,0x28(%rbx)
+    game->ball.x = WINDOW_WIDTH / 2;
+    183b:	0f 11 43 04          	movups %xmm0,0x4(%rbx)
+}
+    183f:	5b                   	pop    %rbx
+    1840:	c3                   	ret
+    1841:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    1848:	00 00 00 00 
+    184c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001850 <_Z11update_gameP8GameData>:
+void update_game(GameData* game) {
+    1850:	f3 0f 1e fa          	endbr64
+    1854:	41 54                	push   %r12
+    1856:	55                   	push   %rbp
+    pthread_mutex_lock(&game->mutex);
+    1857:	48 8d 6f 40          	lea    0x40(%rdi),%rbp
+void update_game(GameData* game) {
+    185b:	53                   	push   %rbx
+    185c:	48 89 fb             	mov    %rdi,%rbx
+    pthread_mutex_lock(&game->mutex);
+    185f:	48 89 ef             	mov    %rbp,%rdi
+void update_game(GameData* game) {
+    1862:	48 83 ec 40          	sub    $0x40,%rsp
+    1866:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    186d:	00 00 
+    186f:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    1874:	31 c0                	xor    %eax,%eax
+    pthread_mutex_lock(&game->mutex);
+    1876:	e8 65 fb ff ff       	call   13e0 <pthread_mutex_lock@plt>
+    if (game->state != GAME_PLAYING) {
+    187b:	83 3b 01             	cmpl   $0x1,(%rbx)
+    187e:	0f 85 2c 01 00 00    	jne    19b0 <_Z11update_gameP8GameData+0x160>
+    game->ball.x += game->ball.vel_x;
+    1884:	f3 0f 7e 43 04       	movq   0x4(%rbx),%xmm0
+    1889:	f3 0f 7e 4b 0c       	movq   0xc(%rbx),%xmm1
+    188e:	0f 58 c1             	addps  %xmm1,%xmm0
+    1891:	0f 28 e0             	movaps %xmm0,%xmm4
+    1894:	0f 13 43 04          	movlps %xmm0,0x4(%rbx)
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    1898:	f3 0f 5b d8          	cvttps2dq %xmm0,%xmm3
+    if (game->ball.y <= 0 || game->ball.y >= WINDOW_HEIGHT - BALL_SIZE) {
+    189c:	66 0f ef c0          	pxor   %xmm0,%xmm0
+    18a0:	0f c6 e4 e5          	shufps $0xe5,%xmm4,%xmm4
+    18a4:	0f 2f c4             	comiss %xmm4,%xmm0
+    18a7:	73 09                	jae    18b2 <_Z11update_gameP8GameData+0x62>
+    18a9:	0f 2f 25 54 17 00 00 	comiss 0x1754(%rip),%xmm4        # 3004 <_IO_stdin_used+0x4>
+    18b0:	72 10                	jb     18c2 <_Z11update_gameP8GameData+0x72>
+        game->ball.vel_y = -game->ball.vel_y;
+    18b2:	0f c6 c9 e5          	shufps $0xe5,%xmm1,%xmm1
+    18b6:	0f 57 0d c3 1a 00 00 	xorps  0x1ac3(%rip),%xmm1        # 3380 <_IO_stdin_used+0x380>
+    18bd:	f3 0f 11 4b 10       	movss  %xmm1,0x10(%rbx)
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    18c2:	48 8b 05 f7 1a 00 00 	mov    0x1af7(%rip),%rax        # 33c0 <_IO_stdin_used+0x3c0>
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18c9:	f3 0f 7e 43 14       	movq   0x14(%rbx),%xmm0
+    if (SDL_HasIntersection(&ball_rect, &p1_rect) || 
+    18ce:	49 89 e4             	mov    %rsp,%r12
+    18d1:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    18d6:	4c 89 e7             	mov    %r12,%rdi
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    18d9:	66 0f d6 1c 24       	movq   %xmm3,(%rsp)
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18de:	f3 0f 5b c0          	cvttps2dq %xmm0,%xmm0
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    18e2:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18e7:	48 8b 05 da 1a 00 00 	mov    0x1ada(%rip),%rax        # 33c8 <_IO_stdin_used+0x3c8>
+    18ee:	66 0f d6 44 24 10    	movq   %xmm0,0x10(%rsp)
+    SDL_Rect p2_rect = {(int)game->player2.x, (int)game->player2.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18f4:	f3 0f 7e 43 20       	movq   0x20(%rbx),%xmm0
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18f9:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    SDL_Rect p2_rect = {(int)game->player2.x, (int)game->player2.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    18fe:	f3 0f 5b c0          	cvttps2dq %xmm0,%xmm0
+    1902:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    1907:	66 0f d6 44 24 20    	movq   %xmm0,0x20(%rsp)
+    if (SDL_HasIntersection(&ball_rect, &p1_rect) || 
+    190d:	e8 5e fa ff ff       	call   1370 <SDL_HasIntersection@plt>
+    1912:	85 c0                	test   %eax,%eax
+    1914:	0f 84 d6 00 00 00    	je     19f0 <_Z11update_gameP8GameData+0x1a0>
+        game->ball.vel_x = -game->ball.vel_x;
+    191a:	f3 0f 10 43 0c       	movss  0xc(%rbx),%xmm0
+    191f:	0f 57 05 5a 1a 00 00 	xorps  0x1a5a(%rip),%xmm0        # 3380 <_IO_stdin_used+0x380>
+    1926:	f3 0f 11 43 0c       	movss  %xmm0,0xc(%rbx)
+    if (game->ball.x < 0) {
+    192b:	f3 0f 10 43 04       	movss  0x4(%rbx),%xmm0
+    1930:	66 0f ef c9          	pxor   %xmm1,%xmm1
+        game->player1.score++;
+    1934:	8b 43 1c             	mov    0x1c(%rbx),%eax
+    if (game->ball.x < 0) {
+    1937:	0f 2f c8             	comiss %xmm0,%xmm1
+    193a:	0f 87 90 00 00 00    	ja     19d0 <_Z11update_gameP8GameData+0x180>
+    if (game->ball.x > WINDOW_WIDTH) {
+    1940:	0f 2f 05 c1 16 00 00 	comiss 0x16c1(%rip),%xmm0        # 3008 <_IO_stdin_used+0x8>
+    1947:	76 18                	jbe    1961 <_Z11update_gameP8GameData+0x111>
+        game->ball.x = WINDOW_WIDTH / 2;
+    1949:	48 8b 15 20 1a 00 00 	mov    0x1a20(%rip),%rdx        # 3370 <_IO_stdin_used+0x370>
+        game->player1.score++;
+    1950:	83 c0 01             	add    $0x1,%eax
+        game->ball.vel_x = -BALL_SPEED;
+    1953:	c7 43 0c 00 00 40 c0 	movl   $0xc0400000,0xc(%rbx)
+        game->player1.score++;
+    195a:	89 43 1c             	mov    %eax,0x1c(%rbx)
+        game->ball.x = WINDOW_WIDTH / 2;
+    195d:	48 89 53 04          	mov    %rdx,0x4(%rbx)
+    if (game->player1.score >= 5 || game->player2.score >= 5) {
+    1961:	83 f8 04             	cmp    $0x4,%eax
+    1964:	7f 3a                	jg     19a0 <_Z11update_gameP8GameData+0x150>
+    1966:	83 7b 28 04          	cmpl   $0x4,0x28(%rbx)
+        game->winner = (game->player1.score >= 5) ? 1 : 2;
+    196a:	b8 02 00 00 00       	mov    $0x2,%eax
+    if (game->player1.score >= 5 || game->player2.score >= 5) {
+    196f:	7f 34                	jg     19a5 <_Z11update_gameP8GameData+0x155>
+    pthread_mutex_unlock(&game->mutex);
+    1971:	48 89 ef             	mov    %rbp,%rdi
+    1974:	e8 b7 f9 ff ff       	call   1330 <pthread_mutex_unlock@plt>
+}
+    1979:	48 8b 44 24 38       	mov    0x38(%rsp),%rax
+    197e:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    1985:	00 00 
+    1987:	0f 85 7d 00 00 00    	jne    1a0a <_Z11update_gameP8GameData+0x1ba>
+    198d:	48 83 c4 40          	add    $0x40,%rsp
+    1991:	5b                   	pop    %rbx
+    1992:	5d                   	pop    %rbp
+    1993:	41 5c                	pop    %r12
+    1995:	c3                   	ret
+    1996:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    199d:	00 00 00 
+        game->winner = (game->player1.score >= 5) ? 1 : 2;
+    19a0:	b8 01 00 00 00       	mov    $0x1,%eax
+        game->state = GAME_OVER;
+    19a5:	c7 03 03 00 00 00    	movl   $0x3,(%rbx)
+        game->winner = (game->player1.score >= 5) ? 1 : 2;
+    19ab:	89 43 2c             	mov    %eax,0x2c(%rbx)
+    19ae:	eb c1                	jmp    1971 <_Z11update_gameP8GameData+0x121>
+        pthread_mutex_unlock(&game->mutex);
+    19b0:	48 8b 44 24 38       	mov    0x38(%rsp),%rax
+    19b5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    19bc:	00 00 
+    19be:	75 4a                	jne    1a0a <_Z11update_gameP8GameData+0x1ba>
+}
+    19c0:	48 83 c4 40          	add    $0x40,%rsp
+        pthread_mutex_unlock(&game->mutex);
+    19c4:	48 89 ef             	mov    %rbp,%rdi
+}
+    19c7:	5b                   	pop    %rbx
+    19c8:	5d                   	pop    %rbp
+    19c9:	41 5c                	pop    %r12
+        pthread_mutex_unlock(&game->mutex);
+    19cb:	e9 60 f9 ff ff       	jmp    1330 <pthread_mutex_unlock@plt>
+        game->ball.x = WINDOW_WIDTH / 2;
+    19d0:	48 8b 15 99 19 00 00 	mov    0x1999(%rip),%rdx        # 3370 <_IO_stdin_used+0x370>
+        game->player2.score++;
+    19d7:	83 43 28 01          	addl   $0x1,0x28(%rbx)
+        game->ball.vel_x = BALL_SPEED;
+    19db:	c7 43 0c 00 00 40 40 	movl   $0x40400000,0xc(%rbx)
+        game->ball.x = WINDOW_WIDTH / 2;
+    19e2:	48 89 53 04          	mov    %rdx,0x4(%rbx)
+    if (game->ball.x > WINDOW_WIDTH) {
+    19e6:	e9 76 ff ff ff       	jmp    1961 <_Z11update_gameP8GameData+0x111>
+    19eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+        SDL_HasIntersection(&ball_rect, &p2_rect)) {
+    19f0:	48 8d 74 24 20       	lea    0x20(%rsp),%rsi
+    19f5:	4c 89 e7             	mov    %r12,%rdi
+    19f8:	e8 73 f9 ff ff       	call   1370 <SDL_HasIntersection@plt>
+    if (SDL_HasIntersection(&ball_rect, &p1_rect) || 
+    19fd:	85 c0                	test   %eax,%eax
+    19ff:	0f 85 15 ff ff ff    	jne    191a <_Z11update_gameP8GameData+0xca>
+    1a05:	e9 21 ff ff ff       	jmp    192b <_Z11update_gameP8GameData+0xdb>
+}
+    1a0a:	e8 71 f9 ff ff       	call   1380 <__stack_chk_fail@plt>
+    1a0f:	90                   	nop
+
+0000000000001a10 <_Z12handle_inputP8GameDataPKh>:
+void handle_input(GameData* game, const Uint8* keystate) {
+    1a10:	f3 0f 1e fa          	endbr64
+    1a14:	41 54                	push   %r12
+    pthread_mutex_lock(&game->mutex);
+    1a16:	4c 8d 67 40          	lea    0x40(%rdi),%r12
+void handle_input(GameData* game, const Uint8* keystate) {
+    1a1a:	55                   	push   %rbp
+    1a1b:	48 89 f5             	mov    %rsi,%rbp
+    1a1e:	53                   	push   %rbx
+    1a1f:	48 89 fb             	mov    %rdi,%rbx
+    pthread_mutex_lock(&game->mutex);
+    1a22:	4c 89 e7             	mov    %r12,%rdi
+    1a25:	e8 b6 f9 ff ff       	call   13e0 <pthread_mutex_lock@plt>
+    if (keystate[SDL_SCANCODE_W] && game->player1.y > 0) {
+    1a2a:	80 7d 1a 00          	cmpb   $0x0,0x1a(%rbp)
+    1a2e:	74 1b                	je     1a4b <_Z12handle_inputP8GameDataPKh+0x3b>
+    1a30:	f3 0f 10 43 18       	movss  0x18(%rbx),%xmm0
+    1a35:	66 0f ef c9          	pxor   %xmm1,%xmm1
+    1a39:	0f 2f c1             	comiss %xmm1,%xmm0
+    1a3c:	76 0d                	jbe    1a4b <_Z12handle_inputP8GameDataPKh+0x3b>
+        game->player1.y -= PADDLE_SPEED;
+    1a3e:	f3 0f 5c 05 c6 15 00 	subss  0x15c6(%rip),%xmm0        # 300c <_IO_stdin_used+0xc>
+    1a45:	00 
+    1a46:	f3 0f 11 43 18       	movss  %xmm0,0x18(%rbx)
+    if (keystate[SDL_SCANCODE_S] && game->player1.y < WINDOW_HEIGHT - PADDLE_HEIGHT) {
+    1a4b:	80 7d 16 00          	cmpb   $0x0,0x16(%rbp)
+    1a4f:	74 16                	je     1a67 <_Z12handle_inputP8GameDataPKh+0x57>
+    1a51:	f3 0f 10 43 18       	movss  0x18(%rbx),%xmm0
+    1a56:	f3 0f 10 0d b2 15 00 	movss  0x15b2(%rip),%xmm1        # 3010 <_IO_stdin_used+0x10>
+    1a5d:	00 
+    1a5e:	0f 2f c8             	comiss %xmm0,%xmm1
+    1a61:	0f 87 f1 00 00 00    	ja     1b58 <_Z12handle_inputP8GameDataPKh+0x148>
+    if (keystate[SDL_SCANCODE_UP] && game->player2.y > 0) {
+    1a67:	80 7d 52 00          	cmpb   $0x0,0x52(%rbp)
+    1a6b:	74 1b                	je     1a88 <_Z12handle_inputP8GameDataPKh+0x78>
+    1a6d:	f3 0f 10 43 24       	movss  0x24(%rbx),%xmm0
+    1a72:	66 0f ef c9          	pxor   %xmm1,%xmm1
+    1a76:	0f 2f c1             	comiss %xmm1,%xmm0
+    1a79:	76 0d                	jbe    1a88 <_Z12handle_inputP8GameDataPKh+0x78>
+        game->player2.y -= PADDLE_SPEED;
+    1a7b:	f3 0f 5c 05 89 15 00 	subss  0x1589(%rip),%xmm0        # 300c <_IO_stdin_used+0xc>
+    1a82:	00 
+    1a83:	f3 0f 11 43 24       	movss  %xmm0,0x24(%rbx)
+    if (keystate[SDL_SCANCODE_DOWN] && game->player2.y < WINDOW_HEIGHT - PADDLE_HEIGHT) {
+    1a88:	80 7d 51 00          	cmpb   $0x0,0x51(%rbp)
+    1a8c:	74 16                	je     1aa4 <_Z12handle_inputP8GameDataPKh+0x94>
+    1a8e:	f3 0f 10 43 24       	movss  0x24(%rbx),%xmm0
+    1a93:	f3 0f 10 0d 75 15 00 	movss  0x1575(%rip),%xmm1        # 3010 <_IO_stdin_used+0x10>
+    1a9a:	00 
+    1a9b:	0f 2f c8             	comiss %xmm0,%xmm1
+    1a9e:	0f 87 9c 00 00 00    	ja     1b40 <_Z12handle_inputP8GameDataPKh+0x130>
+    if (keystate[SDL_SCANCODE_SPACE]) {
+    1aa4:	80 7d 2c 00          	cmpb   $0x0,0x2c(%rbp)
+    1aa8:	74 36                	je     1ae0 <_Z12handle_inputP8GameDataPKh+0xd0>
+        if (game->state == GAME_MENU) {
+    1aaa:	8b 03                	mov    (%rbx),%eax
+    1aac:	85 c0                	test   %eax,%eax
+    1aae:	75 18                	jne    1ac8 <_Z12handle_inputP8GameDataPKh+0xb8>
+    1ab0:	b8 01 00 00 00       	mov    $0x1,%eax
+            game->state = GAME_PAUSED;
+    1ab5:	89 03                	mov    %eax,(%rbx)
+}
+    1ab7:	5b                   	pop    %rbx
+    pthread_mutex_unlock(&game->mutex);
+    1ab8:	4c 89 e7             	mov    %r12,%rdi
+}
+    1abb:	5d                   	pop    %rbp
+    1abc:	41 5c                	pop    %r12
+    pthread_mutex_unlock(&game->mutex);
+    1abe:	e9 6d f8 ff ff       	jmp    1330 <pthread_mutex_unlock@plt>
+    1ac3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+        } else if (game->state == GAME_PLAYING) {
+    1ac8:	83 f8 01             	cmp    $0x1,%eax
+    1acb:	0f 84 9f 00 00 00    	je     1b70 <_Z12handle_inputP8GameDataPKh+0x160>
+        } else if (game->state == GAME_PAUSED) {
+    1ad1:	83 f8 02             	cmp    $0x2,%eax
+    1ad4:	74 da                	je     1ab0 <_Z12handle_inputP8GameDataPKh+0xa0>
+    1ad6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    1add:	00 00 00 
+    if (keystate[SDL_SCANCODE_R] && game->state == GAME_OVER) {
+    1ae0:	80 7d 15 00          	cmpb   $0x0,0x15(%rbp)
+    1ae4:	74 d1                	je     1ab7 <_Z12handle_inputP8GameDataPKh+0xa7>
+    1ae6:	83 3b 03             	cmpl   $0x3,(%rbx)
+    1ae9:	75 cc                	jne    1ab7 <_Z12handle_inputP8GameDataPKh+0xa7>
+    pthread_mutex_init(&game->mutex, NULL);
+    1aeb:	4c 89 e7             	mov    %r12,%rdi
+    1aee:	31 f6                	xor    %esi,%esi
+    1af0:	e8 fb f8 ff ff       	call   13f0 <pthread_mutex_init@plt>
+    game->player1.x = 50;
+    1af5:	48 8b 05 b4 18 00 00 	mov    0x18b4(%rip),%rax        # 33b0 <_IO_stdin_used+0x3b0>
+    pthread_mutex_unlock(&game->mutex);
+    1afc:	4c 89 e7             	mov    %r12,%rdi
+    game->state = GAME_MENU;
+    1aff:	c7 03 00 00 00 00    	movl   $0x0,(%rbx)
+    game->running = 1;
+    1b05:	c7 43 68 01 00 00 00 	movl   $0x1,0x68(%rbx)
+    game->ball.x = WINDOW_WIDTH / 2;
+    1b0c:	0f 28 05 5d 18 00 00 	movaps 0x185d(%rip),%xmm0        # 3370 <_IO_stdin_used+0x370>
+    game->player1.x = 50;
+    1b13:	48 89 43 14          	mov    %rax,0x14(%rbx)
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    1b17:	48 8b 05 9a 18 00 00 	mov    0x189a(%rip),%rax        # 33b8 <_IO_stdin_used+0x3b8>
+    game->player1.score = 0;
+    1b1e:	c7 43 1c 00 00 00 00 	movl   $0x0,0x1c(%rbx)
+    game->player2.x = WINDOW_WIDTH - 50 - PADDLE_WIDTH;
+    1b25:	48 89 43 20          	mov    %rax,0x20(%rbx)
+    game->player2.score = 0;
+    1b29:	c7 43 28 00 00 00 00 	movl   $0x0,0x28(%rbx)
+    game->ball.x = WINDOW_WIDTH / 2;
+    1b30:	0f 11 43 04          	movups %xmm0,0x4(%rbx)
+}
+    1b34:	5b                   	pop    %rbx
+    1b35:	5d                   	pop    %rbp
+    1b36:	41 5c                	pop    %r12
+    pthread_mutex_unlock(&game->mutex);
+    1b38:	e9 f3 f7 ff ff       	jmp    1330 <pthread_mutex_unlock@plt>
+    1b3d:	0f 1f 00             	nopl   (%rax)
+        game->player2.y += PADDLE_SPEED;
+    1b40:	f3 0f 58 05 c4 14 00 	addss  0x14c4(%rip),%xmm0        # 300c <_IO_stdin_used+0xc>
+    1b47:	00 
+    1b48:	f3 0f 11 43 24       	movss  %xmm0,0x24(%rbx)
+    1b4d:	e9 52 ff ff ff       	jmp    1aa4 <_Z12handle_inputP8GameDataPKh+0x94>
+    1b52:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+        game->player1.y += PADDLE_SPEED;
+    1b58:	f3 0f 58 05 ac 14 00 	addss  0x14ac(%rip),%xmm0        # 300c <_IO_stdin_used+0xc>
+    1b5f:	00 
+    1b60:	f3 0f 11 43 18       	movss  %xmm0,0x18(%rbx)
+    1b65:	e9 fd fe ff ff       	jmp    1a67 <_Z12handle_inputP8GameDataPKh+0x57>
+    1b6a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1b70:	b8 02 00 00 00       	mov    $0x2,%eax
+            game->state = GAME_PAUSED;
+    1b75:	89 03                	mov    %eax,(%rbx)
+    if (keystate[SDL_SCANCODE_R] && game->state == GAME_OVER) {
+    1b77:	e9 3b ff ff ff       	jmp    1ab7 <_Z12handle_inputP8GameDataPKh+0xa7>
+    1b7c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001b80 <_Z11render_gameP12SDL_RendererP8GameData>:
+void render_game(SDL_Renderer* renderer, GameData* game) {
+    1b80:	f3 0f 1e fa          	endbr64
+    1b84:	41 56                	push   %r14
+    pthread_mutex_lock(&game->mutex);
+    1b86:	4c 8d 76 40          	lea    0x40(%rsi),%r14
+void render_game(SDL_Renderer* renderer, GameData* game) {
+    1b8a:	41 55                	push   %r13
+    1b8c:	41 54                	push   %r12
+        SDL_Rect line_rect = {WINDOW_WIDTH/2 - 2, y, 4, 10};
+    1b8e:	49 bc 04 00 00 00 0a 	movabs $0xa00000004,%r12
+    1b95:	00 00 00 
+void render_game(SDL_Renderer* renderer, GameData* game) {
+    1b98:	55                   	push   %rbp
+    1b99:	48 89 fd             	mov    %rdi,%rbp
+    pthread_mutex_lock(&game->mutex);
+    1b9c:	4c 89 f7             	mov    %r14,%rdi
+void render_game(SDL_Renderer* renderer, GameData* game) {
+    1b9f:	53                   	push   %rbx
+    1ba0:	48 89 f3             	mov    %rsi,%rbx
+    1ba3:	48 83 ec 50          	sub    $0x50,%rsp
+    1ba7:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1bae:	00 00 
+    1bb0:	48 89 44 24 48       	mov    %rax,0x48(%rsp)
+    1bb5:	31 c0                	xor    %eax,%eax
+    pthread_mutex_lock(&game->mutex);
+    1bb7:	4c 8d 6c 24 30       	lea    0x30(%rsp),%r13
+    1bbc:	e8 1f f8 ff ff       	call   13e0 <pthread_mutex_lock@plt>
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    1bc1:	41 b8 ff 00 00 00    	mov    $0xff,%r8d
+    1bc7:	31 c9                	xor    %ecx,%ecx
+    1bc9:	31 d2                	xor    %edx,%edx
+    1bcb:	31 f6                	xor    %esi,%esi
+    1bcd:	48 89 ef             	mov    %rbp,%rdi
+    1bd0:	e8 eb f7 ff ff       	call   13c0 <SDL_SetRenderDrawColor@plt>
+    SDL_RenderClear(renderer);
+    1bd5:	48 89 ef             	mov    %rbp,%rdi
+    1bd8:	e8 83 f7 ff ff       	call   1360 <SDL_RenderClear@plt>
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    1bdd:	41 b8 ff 00 00 00    	mov    $0xff,%r8d
+    1be3:	b9 ff 00 00 00       	mov    $0xff,%ecx
+    1be8:	48 89 ef             	mov    %rbp,%rdi
+    1beb:	ba ff 00 00 00       	mov    $0xff,%edx
+    1bf0:	be ff 00 00 00       	mov    $0xff,%esi
+    1bf5:	e8 c6 f7 ff ff       	call   13c0 <SDL_SetRenderDrawColor@plt>
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    1bfa:	f3 0f 7e 43 14       	movq   0x14(%rbx),%xmm0
+    SDL_RenderFillRect(renderer, &p1_rect);
+    1bff:	48 89 e6             	mov    %rsp,%rsi
+    1c02:	48 89 ef             	mov    %rbp,%rdi
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    1c05:	48 8b 05 bc 17 00 00 	mov    0x17bc(%rip),%rax        # 33c8 <_IO_stdin_used+0x3c8>
+    1c0c:	f3 0f 5b c0          	cvttps2dq %xmm0,%xmm0
+    1c10:	66 0f d6 04 24       	movq   %xmm0,(%rsp)
+    SDL_Rect p2_rect = {(int)game->player2.x, (int)game->player2.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    1c15:	f3 0f 7e 43 20       	movq   0x20(%rbx),%xmm0
+    SDL_Rect p1_rect = {(int)game->player1.x, (int)game->player1.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    1c1a:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    SDL_Rect p2_rect = {(int)game->player2.x, (int)game->player2.y, PADDLE_WIDTH, PADDLE_HEIGHT};
+    1c1f:	f3 0f 5b c0          	cvttps2dq %xmm0,%xmm0
+    1c23:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    1c28:	66 0f d6 44 24 10    	movq   %xmm0,0x10(%rsp)
+    SDL_RenderFillRect(renderer, &p1_rect);
+    1c2e:	e8 ad f6 ff ff       	call   12e0 <SDL_RenderFillRect@plt>
+    SDL_RenderFillRect(renderer, &p2_rect);
+    1c33:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    1c38:	48 89 ef             	mov    %rbp,%rdi
+    1c3b:	e8 a0 f6 ff ff       	call   12e0 <SDL_RenderFillRect@plt>
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    1c40:	f3 0f 7e 43 04       	movq   0x4(%rbx),%xmm0
+    SDL_RenderFillRect(renderer, &ball_rect);
+    1c45:	48 8d 74 24 20       	lea    0x20(%rsp),%rsi
+    1c4a:	48 89 ef             	mov    %rbp,%rdi
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    1c4d:	48 8b 05 6c 17 00 00 	mov    0x176c(%rip),%rax        # 33c0 <_IO_stdin_used+0x3c0>
+    for (int y = 0; y < WINDOW_HEIGHT; y += 20) {
+    1c54:	31 db                	xor    %ebx,%ebx
+    SDL_Rect ball_rect = {(int)game->ball.x, (int)game->ball.y, BALL_SIZE, BALL_SIZE};
+    1c56:	f3 0f 5b c0          	cvttps2dq %xmm0,%xmm0
+    1c5a:	66 0f d6 44 24 20    	movq   %xmm0,0x20(%rsp)
+    1c60:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    SDL_RenderFillRect(renderer, &ball_rect);
+    1c65:	e8 76 f6 ff ff       	call   12e0 <SDL_RenderFillRect@plt>
+    for (int y = 0; y < WINDOW_HEIGHT; y += 20) {
+    1c6a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+        SDL_Rect line_rect = {WINDOW_WIDTH/2 - 2, y, 4, 10};
+    1c70:	89 5c 24 34          	mov    %ebx,0x34(%rsp)
+        SDL_RenderFillRect(renderer, &line_rect);
+    1c74:	4c 89 ee             	mov    %r13,%rsi
+    1c77:	48 89 ef             	mov    %rbp,%rdi
+    for (int y = 0; y < WINDOW_HEIGHT; y += 20) {
+    1c7a:	83 c3 14             	add    $0x14,%ebx
+        SDL_Rect line_rect = {WINDOW_WIDTH/2 - 2, y, 4, 10};
+    1c7d:	c7 44 24 30 8e 01 00 	movl   $0x18e,0x30(%rsp)
+    1c84:	00 
+    1c85:	4c 89 64 24 38       	mov    %r12,0x38(%rsp)
+        SDL_RenderFillRect(renderer, &line_rect);
+    1c8a:	e8 51 f6 ff ff       	call   12e0 <SDL_RenderFillRect@plt>
+    for (int y = 0; y < WINDOW_HEIGHT; y += 20) {
+    1c8f:	81 fb 58 02 00 00    	cmp    $0x258,%ebx
+    1c95:	75 d9                	jne    1c70 <_Z11render_gameP12SDL_RendererP8GameData+0xf0>
+    pthread_mutex_unlock(&game->mutex);
+    1c97:	4c 89 f7             	mov    %r14,%rdi
+    1c9a:	e8 91 f6 ff ff       	call   1330 <pthread_mutex_unlock@plt>
+    SDL_RenderPresent(renderer);
+    1c9f:	48 89 ef             	mov    %rbp,%rdi
+    1ca2:	e8 f9 f5 ff ff       	call   12a0 <SDL_RenderPresent@plt>
+}
+    1ca7:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+    1cac:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    1cb3:	00 00 
+    1cb5:	75 0d                	jne    1cc4 <_Z11render_gameP12SDL_RendererP8GameData+0x144>
+    1cb7:	48 83 c4 50          	add    $0x50,%rsp
+    1cbb:	5b                   	pop    %rbx
+    1cbc:	5d                   	pop    %rbp
+    1cbd:	41 5c                	pop    %r12
+    1cbf:	41 5d                	pop    %r13
+    1cc1:	41 5e                	pop    %r14
+    1cc3:	c3                   	ret
+    1cc4:	e8 b7 f6 ff ff       	call   1380 <__stack_chk_fail@plt>
+    1cc9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001cd0 <_Z13init_hardwareP8GameData>:
+#include "ioctl_cmds.h"
+#include "display.h"
+#include "pong.h"
+
+// Initialize hardware connection
+int init_hardware(GameData* game) {
+    1cd0:	f3 0f 1e fa          	endbr64
+    1cd4:	53                   	push   %rbx
+    1cd5:	48 89 fb             	mov    %rdi,%rbx
+    1cd8:	48 8d 3d c0 13 00 00 	lea    0x13c0(%rip),%rdi        # 309f <_IO_stdin_used+0x9f>
+    1cdf:	48 83 ec 10          	sub    $0x10,%rsp
+    1ce3:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1cea:	00 00 
+    1cec:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1cf1:	31 c0                	xor    %eax,%eax
+    1cf3:	e8 08 f7 ff ff       	call   1400 <puts@plt>
+      if (__OPEN_NEEDS_MODE (__oflag) && __va_arg_pack_len () < 1)
+	{
+	  __open_missing_mode ();
+	  return __open_2 (__path, __oflag);
+	}
+      return __open_alias (__path, __oflag, __va_arg_pack ());
+    1cf8:	be 02 00 00 00       	mov    $0x2,%esi
+    1cfd:	48 8d 3d b9 13 00 00 	lea    0x13b9(%rip),%rdi        # 30bd <_IO_stdin_used+0xbd>
+    1d04:	31 c0                	xor    %eax,%eax
+    1d06:	e8 05 f6 ff ff       	call   1310 <open@plt>
+    printf("Initializing FPGA hardware...\n");
+    
+    // Try to open the PCI device file
+    game->fpga_fd = open("/dev/de2i-150", O_RDWR);
+    1d0b:	89 43 38             	mov    %eax,0x38(%rbx)
+    if (game->fpga_fd < 0) {
+    1d0e:	85 c0                	test   %eax,%eax
+    1d10:	0f 88 73 01 00 00    	js     1e89 <_Z13init_hardwareP8GameData+0x1b9>
+    1d16:	89 c2                	mov    %eax,%edx
+    1d18:	48 8d 35 59 15 00 00 	lea    0x1559(%rip),%rsi        # 3278 <_IO_stdin_used+0x278>
+    1d1f:	bf 02 00 00 00       	mov    $0x2,%edi
+    1d24:	31 c0                	xor    %eax,%eax
+    1d26:	e8 15 f5 ff ff       	call   1240 <__printf_chk@plt>
+    
+    // Test initial communication - clear all LEDs and displays
+    uint32_t zero = 0;
+    
+    // Clear red LEDs
+    if (ioctl(game->fpga_fd, WR_RED_LEDS) < 0) {
+    1d2b:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1d2e:	31 c0                	xor    %eax,%eax
+    1d30:	be 65 61 00 00       	mov    $0x6165,%esi
+    uint32_t zero = 0;
+    1d35:	c7 04 24 00 00 00 00 	movl   $0x0,(%rsp)
+    if (ioctl(game->fpga_fd, WR_RED_LEDS) < 0) {
+    1d3c:	e8 5f f6 ff ff       	call   13a0 <ioctl@plt>
+    1d41:	85 c0                	test   %eax,%eax
+    1d43:	0f 88 e7 00 00 00    	js     1e30 <_Z13init_hardwareP8GameData+0x160>
+        printf("Warning: Could not access red LEDs\n");
+    } else {
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1d49:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1d4c:	48 89 e6             	mov    %rsp,%rsi
+    1d4f:	ba 04 00 00 00       	mov    $0x4,%edx
+    1d54:	e8 67 f5 ff ff       	call   12c0 <write@plt>
+    1d59:	48 8d 3d 6b 13 00 00 	lea    0x136b(%rip),%rdi        # 30cb <_IO_stdin_used+0xcb>
+    1d60:	e8 9b f6 ff ff       	call   1400 <puts@plt>
+        printf("Red LEDs cleared\n");
+    }
+    
+    // Clear green LEDs  
+    if (ioctl(game->fpga_fd, WR_GREEN_LEDS) < 0) {
+    1d65:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1d68:	31 c0                	xor    %eax,%eax
+    1d6a:	be 66 61 00 00       	mov    $0x6166,%esi
+    1d6f:	e8 2c f6 ff ff       	call   13a0 <ioctl@plt>
+    1d74:	85 c0                	test   %eax,%eax
+    1d76:	0f 88 fc 00 00 00    	js     1e78 <_Z13init_hardwareP8GameData+0x1a8>
+        printf("Warning: Could not access green LEDs\n");
+    } else {
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1d7c:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1d7f:	48 89 e6             	mov    %rsp,%rsi
+    1d82:	ba 04 00 00 00       	mov    $0x4,%edx
+    1d87:	e8 34 f5 ff ff       	call   12c0 <write@plt>
+    1d8c:	48 8d 3d 49 13 00 00 	lea    0x1349(%rip),%rdi        # 30dc <_IO_stdin_used+0xdc>
+    1d93:	e8 68 f6 ff ff       	call   1400 <puts@plt>
+    }
+    
+    // Clear displays
+    uint32_t display_off = 0xFFFFFFFF; // All segments off
+    
+    if (ioctl(game->fpga_fd, WR_L_DISPLAY) < 0) {
+    1d98:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1d9b:	31 c0                	xor    %eax,%eax
+    1d9d:	be 63 61 00 00       	mov    $0x6163,%esi
+    uint32_t display_off = 0xFFFFFFFF; // All segments off
+    1da2:	c7 44 24 04 ff ff ff 	movl   $0xffffffff,0x4(%rsp)
+    1da9:	ff 
+    if (ioctl(game->fpga_fd, WR_L_DISPLAY) < 0) {
+    1daa:	e8 f1 f5 ff ff       	call   13a0 <ioctl@plt>
+    1daf:	85 c0                	test   %eax,%eax
+    1db1:	0f 88 a9 00 00 00    	js     1e60 <_Z13init_hardwareP8GameData+0x190>
+        printf("Warning: Could not access left display\n");
+    } else {
+        write(game->fpga_fd, &display_off, sizeof(display_off));
+    1db7:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1dba:	48 8d 74 24 04       	lea    0x4(%rsp),%rsi
+    1dbf:	ba 04 00 00 00       	mov    $0x4,%edx
+    1dc4:	e8 f7 f4 ff ff       	call   12c0 <write@plt>
+    1dc9:	48 8d 3d 1f 13 00 00 	lea    0x131f(%rip),%rdi        # 30ef <_IO_stdin_used+0xef>
+    1dd0:	e8 2b f6 ff ff       	call   1400 <puts@plt>
+        printf("Left display cleared\n");
+    }
+    
+    if (ioctl(game->fpga_fd, WR_R_DISPLAY) < 0) {
+    1dd5:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1dd8:	31 c0                	xor    %eax,%eax
+    1dda:	be 64 61 00 00       	mov    $0x6164,%esi
+    1ddf:	e8 bc f5 ff ff       	call   13a0 <ioctl@plt>
+    1de4:	85 c0                	test   %eax,%eax
+    1de6:	78 60                	js     1e48 <_Z13init_hardwareP8GameData+0x178>
+        printf("Warning: Could not access right display\n");
+    } else {
+        write(game->fpga_fd, &display_off, sizeof(display_off));
+    1de8:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1deb:	48 8d 74 24 04       	lea    0x4(%rsp),%rsi
+    1df0:	ba 04 00 00 00       	mov    $0x4,%edx
+    1df5:	e8 c6 f4 ff ff       	call   12c0 <write@plt>
+    1dfa:	48 8d 3d 03 13 00 00 	lea    0x1303(%rip),%rdi        # 3104 <_IO_stdin_used+0x104>
+    1e01:	e8 fa f5 ff ff       	call   1400 <puts@plt>
+    1e06:	48 8d 3d 3b 15 00 00 	lea    0x153b(%rip),%rdi        # 3348 <_IO_stdin_used+0x348>
+    1e0d:	e8 ee f5 ff ff       	call   1400 <puts@plt>
+        printf("Right display cleared\n");
+    }
+    
+    printf("Hardware initialization complete\n");
+    return 0;
+    1e12:	31 c0                	xor    %eax,%eax
+}
+    1e14:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+    1e19:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+    1e20:	00 00 
+    1e22:	0f 85 99 00 00 00    	jne    1ec1 <_Z13init_hardwareP8GameData+0x1f1>
+    1e28:	48 83 c4 10          	add    $0x10,%rsp
+    1e2c:	5b                   	pop    %rbx
+    1e2d:	c3                   	ret
+    1e2e:	66 90                	xchg   %ax,%ax
+    1e30:	48 8d 3d 71 14 00 00 	lea    0x1471(%rip),%rdi        # 32a8 <_IO_stdin_used+0x2a8>
+    1e37:	e8 c4 f5 ff ff       	call   1400 <puts@plt>
+    1e3c:	e9 24 ff ff ff       	jmp    1d65 <_Z13init_hardwareP8GameData+0x95>
+    1e41:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1e48:	48 8d 3d d1 14 00 00 	lea    0x14d1(%rip),%rdi        # 3320 <_IO_stdin_used+0x320>
+    1e4f:	e8 ac f5 ff ff       	call   1400 <puts@plt>
+    1e54:	eb b0                	jmp    1e06 <_Z13init_hardwareP8GameData+0x136>
+    1e56:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    1e5d:	00 00 00 
+    1e60:	48 8d 3d 91 14 00 00 	lea    0x1491(%rip),%rdi        # 32f8 <_IO_stdin_used+0x2f8>
+    1e67:	e8 94 f5 ff ff       	call   1400 <puts@plt>
+    1e6c:	e9 64 ff ff ff       	jmp    1dd5 <_Z13init_hardwareP8GameData+0x105>
+    1e71:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1e78:	48 8d 3d 51 14 00 00 	lea    0x1451(%rip),%rdi        # 32d0 <_IO_stdin_used+0x2d0>
+    1e7f:	e8 7c f5 ff ff       	call   1400 <puts@plt>
+    1e84:	e9 0f ff ff ff       	jmp    1d98 <_Z13init_hardwareP8GameData+0xc8>
+        printf("Failed to open FPGA device: %s\n", strerror(errno));
+    1e89:	e8 e2 f3 ff ff       	call   1270 <__errno_location@plt>
+    1e8e:	8b 38                	mov    (%rax),%edi
+    1e90:	e8 1b f4 ff ff       	call   12b0 <strerror@plt>
+    1e95:	48 8d 35 84 13 00 00 	lea    0x1384(%rip),%rsi        # 3220 <_IO_stdin_used+0x220>
+    1e9c:	bf 02 00 00 00       	mov    $0x2,%edi
+    1ea1:	48 89 c2             	mov    %rax,%rdx
+    1ea4:	31 c0                	xor    %eax,%eax
+    1ea6:	e8 95 f3 ff ff       	call   1240 <__printf_chk@plt>
+    1eab:	48 8d 3d 8e 13 00 00 	lea    0x138e(%rip),%rdi        # 3240 <_IO_stdin_used+0x240>
+    1eb2:	e8 49 f5 ff ff       	call   1400 <puts@plt>
+        return -1;
+    1eb7:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1ebc:	e9 53 ff ff ff       	jmp    1e14 <_Z13init_hardwareP8GameData+0x144>
+}
+    1ec1:	e8 ba f4 ff ff       	call   1380 <__stack_chk_fail@plt>
+    1ec6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    1ecd:	00 00 00 
+
+0000000000001ed0 <_Z16cleanup_hardwareP8GameData>:
+
+// Cleanup hardware resources
+void cleanup_hardware(GameData* game) {
+    1ed0:	f3 0f 1e fa          	endbr64
+    1ed4:	55                   	push   %rbp
+    1ed5:	53                   	push   %rbx
+    1ed6:	48 83 ec 18          	sub    $0x18,%rsp
+    1eda:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1ee1:	00 00 
+    1ee3:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1ee8:	31 c0                	xor    %eax,%eax
+    if (game->fpga_fd >= 0) {
+    1eea:	8b 47 38             	mov    0x38(%rdi),%eax
+    1eed:	85 c0                	test   %eax,%eax
+    1eef:	0f 88 b6 00 00 00    	js     1fab <_Z16cleanup_hardwareP8GameData+0xdb>
+    1ef5:	48 89 fb             	mov    %rdi,%rbx
+    1ef8:	48 8d 3d 1b 12 00 00 	lea    0x121b(%rip),%rdi        # 311a <_IO_stdin_used+0x11a>
+        // Turn off all LEDs and displays before closing
+        uint32_t zero = 0;
+        uint32_t display_off = 0xFFFFFFFF;
+        
+        ioctl(game->fpga_fd, WR_RED_LEDS);
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1eff:	48 89 e5             	mov    %rsp,%rbp
+    1f02:	e8 f9 f4 ff ff       	call   1400 <puts@plt>
+        ioctl(game->fpga_fd, WR_RED_LEDS);
+    1f07:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f0a:	be 65 61 00 00       	mov    $0x6165,%esi
+    1f0f:	31 c0                	xor    %eax,%eax
+        uint32_t zero = 0;
+    1f11:	c7 04 24 00 00 00 00 	movl   $0x0,(%rsp)
+        uint32_t display_off = 0xFFFFFFFF;
+    1f18:	c7 44 24 04 ff ff ff 	movl   $0xffffffff,0x4(%rsp)
+    1f1f:	ff 
+        ioctl(game->fpga_fd, WR_RED_LEDS);
+    1f20:	e8 7b f4 ff ff       	call   13a0 <ioctl@plt>
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1f25:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f28:	ba 04 00 00 00       	mov    $0x4,%edx
+    1f2d:	48 89 ee             	mov    %rbp,%rsi
+    1f30:	e8 8b f3 ff ff       	call   12c0 <write@plt>
+        
+        ioctl(game->fpga_fd, WR_GREEN_LEDS);
+    1f35:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f38:	be 66 61 00 00       	mov    $0x6166,%esi
+    1f3d:	31 c0                	xor    %eax,%eax
+    1f3f:	e8 5c f4 ff ff       	call   13a0 <ioctl@plt>
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1f44:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f47:	ba 04 00 00 00       	mov    $0x4,%edx
+    1f4c:	48 89 ee             	mov    %rbp,%rsi
+        
+        ioctl(game->fpga_fd, WR_L_DISPLAY);
+        write(game->fpga_fd, &display_off, sizeof(display_off));
+    1f4f:	48 8d 6c 24 04       	lea    0x4(%rsp),%rbp
+        write(game->fpga_fd, &zero, sizeof(zero));
+    1f54:	e8 67 f3 ff ff       	call   12c0 <write@plt>
+        ioctl(game->fpga_fd, WR_L_DISPLAY);
+    1f59:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f5c:	be 63 61 00 00       	mov    $0x6163,%esi
+    1f61:	31 c0                	xor    %eax,%eax
+    1f63:	e8 38 f4 ff ff       	call   13a0 <ioctl@plt>
+        write(game->fpga_fd, &display_off, sizeof(display_off));
+    1f68:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f6b:	ba 04 00 00 00       	mov    $0x4,%edx
+    1f70:	48 89 ee             	mov    %rbp,%rsi
+    1f73:	e8 48 f3 ff ff       	call   12c0 <write@plt>
+        
+        ioctl(game->fpga_fd, WR_R_DISPLAY);
+    1f78:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f7b:	be 64 61 00 00       	mov    $0x6164,%esi
+    1f80:	31 c0                	xor    %eax,%eax
+    1f82:	e8 19 f4 ff ff       	call   13a0 <ioctl@plt>
+        write(game->fpga_fd, &display_off, sizeof(display_off));
+    1f87:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f8a:	ba 04 00 00 00       	mov    $0x4,%edx
+    1f8f:	48 89 ee             	mov    %rbp,%rsi
+    1f92:	e8 29 f3 ff ff       	call   12c0 <write@plt>
+        
+        close(game->fpga_fd);
+    1f97:	8b 7b 38             	mov    0x38(%rbx),%edi
+    1f9a:	e8 81 f4 ff ff       	call   1420 <close@plt>
+    1f9f:	48 8d 3d 91 11 00 00 	lea    0x1191(%rip),%rdi        # 3137 <_IO_stdin_used+0x137>
+    1fa6:	e8 55 f4 ff ff       	call   1400 <puts@plt>
+        printf("FPGA device closed\n");
+    }
+}
+    1fab:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    1fb0:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    1fb7:	00 00 
+    1fb9:	75 07                	jne    1fc2 <_Z16cleanup_hardwareP8GameData+0xf2>
+    1fbb:	48 83 c4 18          	add    $0x18,%rsp
+    1fbf:	5b                   	pop    %rbx
+    1fc0:	5d                   	pop    %rbp
+    1fc1:	c3                   	ret
+    1fc2:	e8 b9 f3 ff ff       	call   1380 <__stack_chk_fail@plt>
+    1fc7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    1fce:	00 00 
+
+0000000000001fd0 <_Z11update_ledsP8GameData>:
+
+// Update LEDs based on game state
+void update_leds(GameData* game) {
+    1fd0:	f3 0f 1e fa          	endbr64
+    1fd4:	53                   	push   %rbx
+    1fd5:	48 89 fb             	mov    %rdi,%rbx
+    1fd8:	48 83 ec 10          	sub    $0x10,%rsp
+    if (game->fpga_fd < 0) return;
+    1fdc:	8b 7f 38             	mov    0x38(%rdi),%edi
+void update_leds(GameData* game) {
+    1fdf:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1fe6:	00 00 
+    1fe8:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1fed:	31 c0                	xor    %eax,%eax
+    if (game->fpga_fd < 0) return;
+    1fef:	85 ff                	test   %edi,%edi
+    1ff1:	0f 88 a8 00 00 00    	js     209f <_Z11update_ledsP8GameData+0xcf>
+    
+    uint32_t red_pattern = 0;
+    uint32_t green_pattern = 0;
+    
+    switch (game->state) {
+    1ff7:	8b 03                	mov    (%rbx),%eax
+    uint32_t red_pattern = 0;
+    1ff9:	c7 04 24 00 00 00 00 	movl   $0x0,(%rsp)
+    uint32_t green_pattern = 0;
+    2000:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%rsp)
+    2007:	00 
+    switch (game->state) {
+    2008:	83 f8 02             	cmp    $0x2,%eax
+    200b:	0f 84 bf 00 00 00    	je     20d0 <_Z11update_ledsP8GameData+0x100>
+    2011:	0f 87 a1 00 00 00    	ja     20b8 <_Z11update_ledsP8GameData+0xe8>
+    2017:	85 c0                	test   %eax,%eax
+    2019:	0f 84 c1 00 00 00    	je     20e0 <_Z11update_ledsP8GameData+0x110>
+            
+        case GAME_PLAYING:
+            // Show ball position with LEDs
+            // Red LEDs represent ball X position (left side)
+            // Green LEDs represent ball Y position (relative)
+            red_pattern = (uint32_t)(game->ball.x / WINDOW_WIDTH * 32) & 0xFFFFFFFF;
+    201f:	f3 0f 10 0d ed 0f 00 	movss  0xfed(%rip),%xmm1        # 3014 <_IO_stdin_used+0x14>
+    2026:	00 
+    2027:	f3 0f 10 43 04       	movss  0x4(%rbx),%xmm0
+    202c:	f3 0f 5e 05 d4 0f 00 	divss  0xfd4(%rip),%xmm0        # 3008 <_IO_stdin_used+0x8>
+    2033:	00 
+    2034:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+    2038:	f3 48 0f 2c c0       	cvttss2si %xmm0,%rax
+            green_pattern = (uint32_t)(game->ball.y / WINDOW_HEIGHT * 32) & 0xFFFFFFFF;
+    203d:	f3 0f 10 43 08       	movss  0x8(%rbx),%xmm0
+    2042:	f3 0f 5e 05 ce 0f 00 	divss  0xfce(%rip),%xmm0        # 3018 <_IO_stdin_used+0x18>
+    2049:	00 
+    204a:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+            red_pattern = (uint32_t)(game->ball.x / WINDOW_WIDTH * 32) & 0xFFFFFFFF;
+    204e:	89 04 24             	mov    %eax,(%rsp)
+            green_pattern = (uint32_t)(game->ball.y / WINDOW_HEIGHT * 32) & 0xFFFFFFFF;
+    2051:	f3 48 0f 2c c0       	cvttss2si %xmm0,%rax
+    2056:	89 44 24 04          	mov    %eax,0x4(%rsp)
+            }
+            break;
+    }
+    
+    // Write to hardware - CRITICAL: Always call ioctl() before write()
+    if (ioctl(game->fpga_fd, WR_RED_LEDS) >= 0) {
+    205a:	31 c0                	xor    %eax,%eax
+    205c:	be 65 61 00 00       	mov    $0x6165,%esi
+    2061:	e8 3a f3 ff ff       	call   13a0 <ioctl@plt>
+    2066:	85 c0                	test   %eax,%eax
+    2068:	78 10                	js     207a <_Z11update_ledsP8GameData+0xaa>
+        write(game->fpga_fd, &red_pattern, sizeof(red_pattern));
+    206a:	8b 7b 38             	mov    0x38(%rbx),%edi
+    206d:	48 89 e6             	mov    %rsp,%rsi
+    2070:	ba 04 00 00 00       	mov    $0x4,%edx
+    2075:	e8 46 f2 ff ff       	call   12c0 <write@plt>
+    }
+    
+    if (ioctl(game->fpga_fd, WR_GREEN_LEDS) >= 0) {
+    207a:	8b 7b 38             	mov    0x38(%rbx),%edi
+    207d:	31 c0                	xor    %eax,%eax
+    207f:	be 66 61 00 00       	mov    $0x6166,%esi
+    2084:	e8 17 f3 ff ff       	call   13a0 <ioctl@plt>
+    2089:	85 c0                	test   %eax,%eax
+    208b:	78 12                	js     209f <_Z11update_ledsP8GameData+0xcf>
+        write(game->fpga_fd, &green_pattern, sizeof(green_pattern));
+    208d:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2090:	48 8d 74 24 04       	lea    0x4(%rsp),%rsi
+    2095:	ba 04 00 00 00       	mov    $0x4,%edx
+    209a:	e8 21 f2 ff ff       	call   12c0 <write@plt>
+    }
+}
+    209f:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    20a4:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    20ab:	00 00 
+    20ad:	75 3e                	jne    20ed <_Z11update_ledsP8GameData+0x11d>
+    20af:	48 83 c4 10          	add    $0x10,%rsp
+    20b3:	5b                   	pop    %rbx
+    20b4:	c3                   	ret
+    20b5:	0f 1f 00             	nopl   (%rax)
+    switch (game->state) {
+    20b8:	83 f8 03             	cmp    $0x3,%eax
+    20bb:	75 9d                	jne    205a <_Z11update_ledsP8GameData+0x8a>
+            if (game->winner == 1) {
+    20bd:	83 7b 2c 01          	cmpl   $0x1,0x2c(%rbx)
+    20c1:	75 0d                	jne    20d0 <_Z11update_ledsP8GameData+0x100>
+                green_pattern = 0xFFFFFFFF; // Player 1 wins
+    20c3:	c7 44 24 04 ff ff ff 	movl   $0xffffffff,0x4(%rsp)
+    20ca:	ff 
+    20cb:	eb 8d                	jmp    205a <_Z11update_ledsP8GameData+0x8a>
+    20cd:	0f 1f 00             	nopl   (%rax)
+                red_pattern = 0xFFFFFFFF;   // Player 2 wins
+    20d0:	c7 04 24 ff ff ff ff 	movl   $0xffffffff,(%rsp)
+    20d7:	e9 7e ff ff ff       	jmp    205a <_Z11update_ledsP8GameData+0x8a>
+    20dc:	0f 1f 40 00          	nopl   0x0(%rax)
+            green_pattern = 0x55555555; // Alternating LEDs
+    20e0:	c7 44 24 04 55 55 55 	movl   $0x55555555,0x4(%rsp)
+    20e7:	55 
+            break;
+    20e8:	e9 6d ff ff ff       	jmp    205a <_Z11update_ledsP8GameData+0x8a>
+}
+    20ed:	e8 8e f2 ff ff       	call   1380 <__stack_chk_fail@plt>
+    20f2:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    20f9:	00 00 00 00 
+    20fd:	0f 1f 00             	nopl   (%rax)
+
+0000000000002100 <_Z16score_to_displayi>:
+
+// Convert score to 7-segment display pattern
+uint32_t score_to_display(int score) {
+    2100:	f3 0f 1e fa          	endbr64
+    2104:	48 83 ec 38          	sub    $0x38,%rsp
+    uint32_t patterns[] = {
+    2108:	66 0f 6f 05 80 12 00 	movdqa 0x1280(%rip),%xmm0        # 3390 <_IO_stdin_used+0x390>
+    210f:	00 
+uint32_t score_to_display(int score) {
+    2110:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2117:	00 00 
+    2119:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    211e:	31 c0                	xor    %eax,%eax
+    uint32_t patterns[] = {
+    2120:	48 8b 05 a9 12 00 00 	mov    0x12a9(%rip),%rax        # 33d0 <_IO_stdin_used+0x3d0>
+    2127:	0f 29 04 24          	movaps %xmm0,(%rsp)
+    212b:	66 0f 6f 05 6d 12 00 	movdqa 0x126d(%rip),%xmm0        # 33a0 <_IO_stdin_used+0x3a0>
+    2132:	00 
+    2133:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+    2138:	0f 29 44 24 10       	movaps %xmm0,0x10(%rsp)
+        HEX_0, HEX_1, HEX_2, HEX_3, HEX_4,
+        HEX_5, HEX_6, HEX_7, HEX_8, HEX_9
+    };
+    
+    if (score >= 0 && score <= 9) {
+    213d:	83 ff 09             	cmp    $0x9,%edi
+    2140:	76 1c                	jbe    215e <_Z16score_to_displayi+0x5e>
+        return patterns[score];
+    }
+    
+    // For scores > 9, show last digit
+    return patterns[score % 10];
+    2142:	48 63 c7             	movslq %edi,%rax
+    2145:	89 fa                	mov    %edi,%edx
+    2147:	48 69 c0 67 66 66 66 	imul   $0x66666667,%rax,%rax
+    214e:	c1 fa 1f             	sar    $0x1f,%edx
+    2151:	48 c1 f8 22          	sar    $0x22,%rax
+    2155:	29 d0                	sub    %edx,%eax
+    2157:	8d 04 80             	lea    (%rax,%rax,4),%eax
+    215a:	01 c0                	add    %eax,%eax
+    215c:	29 c7                	sub    %eax,%edi
+    215e:	48 63 ff             	movslq %edi,%rdi
+    2161:	8b 04 bc             	mov    (%rsp,%rdi,4),%eax
+}
+    2164:	48 8b 54 24 28       	mov    0x28(%rsp),%rdx
+    2169:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+    2170:	00 00 
+    2172:	75 05                	jne    2179 <_Z16score_to_displayi+0x79>
+    2174:	48 83 c4 38          	add    $0x38,%rsp
+    2178:	c3                   	ret
+    2179:	e8 02 f2 ff ff       	call   1380 <__stack_chk_fail@plt>
+    217e:	66 90                	xchg   %ax,%ax
+
+0000000000002180 <_Z15update_displaysP8GameData>:
+
+// Update 7-segment displays with scores
+void update_displays(GameData* game) {
+    2180:	f3 0f 1e fa          	endbr64
+    2184:	53                   	push   %rbx
+    2185:	48 89 fb             	mov    %rdi,%rbx
+    2188:	48 83 ec 40          	sub    $0x40,%rsp
+    if (game->fpga_fd < 0) return;
+    218c:	8b 7f 38             	mov    0x38(%rdi),%edi
+void update_displays(GameData* game) {
+    218f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2196:	00 00 
+    2198:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    219d:	31 c0                	xor    %eax,%eax
+    if (game->fpga_fd < 0) return;
+    219f:	85 ff                	test   %edi,%edi
+    21a1:	0f 88 b6 00 00 00    	js     225d <_Z15update_displaysP8GameData+0xdd>
+    uint32_t patterns[] = {
+    21a7:	66 0f 6f 0d e1 11 00 	movdqa 0x11e1(%rip),%xmm1        # 3390 <_IO_stdin_used+0x390>
+    21ae:	00 
+    21af:	66 0f 6f 05 e9 11 00 	movdqa 0x11e9(%rip),%xmm0        # 33a0 <_IO_stdin_used+0x3a0>
+    21b6:	00 
+    21b7:	48 8b 0d 12 12 00 00 	mov    0x1212(%rip),%rcx        # 33d0 <_IO_stdin_used+0x3d0>
+    
+    // Left display shows Player 1 score
+    uint32_t left_pattern = score_to_display(game->player1.score);
+    21be:	48 63 43 1c          	movslq 0x1c(%rbx),%rax
+    uint32_t patterns[] = {
+    21c2:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+    21c7:	48 89 4c 24 30       	mov    %rcx,0x30(%rsp)
+    21cc:	0f 29 44 24 20       	movaps %xmm0,0x20(%rsp)
+    if (score >= 0 && score <= 9) {
+    21d1:	83 f8 09             	cmp    $0x9,%eax
+    21d4:	76 1e                	jbe    21f4 <_Z15update_displaysP8GameData+0x74>
+    return patterns[score % 10];
+    21d6:	48 63 d0             	movslq %eax,%rdx
+    21d9:	89 c6                	mov    %eax,%esi
+    21db:	48 69 d2 67 66 66 66 	imul   $0x66666667,%rdx,%rdx
+    21e2:	c1 fe 1f             	sar    $0x1f,%esi
+    21e5:	48 c1 fa 22          	sar    $0x22,%rdx
+    21e9:	29 f2                	sub    %esi,%edx
+    21eb:	8d 14 92             	lea    (%rdx,%rdx,4),%edx
+    21ee:	01 d2                	add    %edx,%edx
+    21f0:	29 d0                	sub    %edx,%eax
+    21f2:	48 98                	cltq
+    21f4:	8b 44 84 10          	mov    0x10(%rsp,%rax,4),%eax
+    uint32_t patterns[] = {
+    21f8:	48 89 4c 24 30       	mov    %rcx,0x30(%rsp)
+    21fd:	0f 29 4c 24 10       	movaps %xmm1,0x10(%rsp)
+    uint32_t left_pattern = score_to_display(game->player1.score);
+    2202:	89 44 24 08          	mov    %eax,0x8(%rsp)
+    
+    // Right display shows Player 2 score  
+    uint32_t right_pattern = score_to_display(game->player2.score);
+    2206:	48 63 43 28          	movslq 0x28(%rbx),%rax
+    uint32_t patterns[] = {
+    220a:	0f 29 44 24 20       	movaps %xmm0,0x20(%rsp)
+    if (score >= 0 && score <= 9) {
+    220f:	83 f8 09             	cmp    $0x9,%eax
+    2212:	76 1e                	jbe    2232 <_Z15update_displaysP8GameData+0xb2>
+    return patterns[score % 10];
+    2214:	48 63 d0             	movslq %eax,%rdx
+    2217:	89 c1                	mov    %eax,%ecx
+    2219:	48 69 d2 67 66 66 66 	imul   $0x66666667,%rdx,%rdx
+    2220:	c1 f9 1f             	sar    $0x1f,%ecx
+    2223:	48 c1 fa 22          	sar    $0x22,%rdx
+    2227:	29 ca                	sub    %ecx,%edx
+    2229:	8d 14 92             	lea    (%rdx,%rdx,4),%edx
+    222c:	01 d2                	add    %edx,%edx
+    222e:	29 d0                	sub    %edx,%eax
+    2230:	48 98                	cltq
+    2232:	8b 44 84 10          	mov    0x10(%rsp,%rax,4),%eax
+    
+    // Write to hardware - CRITICAL: Always call ioctl() before write()
+    if (ioctl(game->fpga_fd, WR_L_DISPLAY) >= 0) {
+    2236:	be 63 61 00 00       	mov    $0x6163,%esi
+    uint32_t right_pattern = score_to_display(game->player2.score);
+    223b:	89 44 24 0c          	mov    %eax,0xc(%rsp)
+    if (ioctl(game->fpga_fd, WR_L_DISPLAY) >= 0) {
+    223f:	31 c0                	xor    %eax,%eax
+    2241:	e8 5a f1 ff ff       	call   13a0 <ioctl@plt>
+    2246:	85 c0                	test   %eax,%eax
+    2248:	79 46                	jns    2290 <_Z15update_displaysP8GameData+0x110>
+        write(game->fpga_fd, &left_pattern, sizeof(left_pattern));
+    }
+    
+    if (ioctl(game->fpga_fd, WR_R_DISPLAY) >= 0) {
+    224a:	8b 7b 38             	mov    0x38(%rbx),%edi
+    224d:	31 c0                	xor    %eax,%eax
+    224f:	be 64 61 00 00       	mov    $0x6164,%esi
+    2254:	e8 47 f1 ff ff       	call   13a0 <ioctl@plt>
+    2259:	85 c0                	test   %eax,%eax
+    225b:	79 1b                	jns    2278 <_Z15update_displaysP8GameData+0xf8>
+        write(game->fpga_fd, &right_pattern, sizeof(right_pattern));
+    }
+}
+    225d:	48 8b 44 24 38       	mov    0x38(%rsp),%rax
+    2262:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    2269:	00 00 
+    226b:	75 37                	jne    22a4 <_Z15update_displaysP8GameData+0x124>
+    226d:	48 83 c4 40          	add    $0x40,%rsp
+    2271:	5b                   	pop    %rbx
+    2272:	c3                   	ret
+    2273:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+        write(game->fpga_fd, &right_pattern, sizeof(right_pattern));
+    2278:	8b 7b 38             	mov    0x38(%rbx),%edi
+    227b:	48 8d 74 24 0c       	lea    0xc(%rsp),%rsi
+    2280:	ba 04 00 00 00       	mov    $0x4,%edx
+    2285:	e8 36 f0 ff ff       	call   12c0 <write@plt>
+    228a:	eb d1                	jmp    225d <_Z15update_displaysP8GameData+0xdd>
+    228c:	0f 1f 40 00          	nopl   0x0(%rax)
+        write(game->fpga_fd, &left_pattern, sizeof(left_pattern));
+    2290:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2293:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+    2298:	ba 04 00 00 00       	mov    $0x4,%edx
+    229d:	e8 1e f0 ff ff       	call   12c0 <write@plt>
+    22a2:	eb a6                	jmp    224a <_Z15update_displaysP8GameData+0xca>
+}
+    22a4:	e8 d7 f0 ff ff       	call   1380 <__stack_chk_fail@plt>
+    22a9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000022b0 <_Z20read_hardware_inputsP8GameData>:
+
+// Read switches and buttons (for future features)
+void read_hardware_inputs(GameData* game) {
+    22b0:	f3 0f 1e fa          	endbr64
+    22b4:	53                   	push   %rbx
+    22b5:	48 89 fb             	mov    %rdi,%rbx
+    22b8:	48 83 ec 10          	sub    $0x10,%rsp
+    if (game->fpga_fd < 0) return;
+    22bc:	8b 7f 38             	mov    0x38(%rdi),%edi
+void read_hardware_inputs(GameData* game) {
+    22bf:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    22c6:	00 00 
+    22c8:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    22cd:	31 c0                	xor    %eax,%eax
+    if (game->fpga_fd < 0) return;
+    22cf:	85 ff                	test   %edi,%edi
+    22d1:	78 21                	js     22f4 <_Z20read_hardware_inputsP8GameData+0x44>
+    
+    uint32_t data;
+    
+    // Read switches
+    if (ioctl(game->fpga_fd, RD_SWITCHES) >= 0) {
+    22d3:	be 61 61 00 00       	mov    $0x6161,%esi
+    22d8:	e8 c3 f0 ff ff       	call   13a0 <ioctl@plt>
+    22dd:	85 c0                	test   %eax,%eax
+    22df:	79 4f                	jns    2330 <_Z20read_hardware_inputsP8GameData+0x80>
+            game->switches = data;
+        }
+    }
+    
+    // Read push buttons
+    if (ioctl(game->fpga_fd, RD_PBUTTONS) >= 0) {
+    22e1:	8b 7b 38             	mov    0x38(%rbx),%edi
+    22e4:	31 c0                	xor    %eax,%eax
+    22e6:	be 62 61 00 00       	mov    $0x6162,%esi
+    22eb:	e8 b0 f0 ff ff       	call   13a0 <ioctl@plt>
+    22f0:	85 c0                	test   %eax,%eax
+    22f2:	79 1c                	jns    2310 <_Z20read_hardware_inputsP8GameData+0x60>
+    // You can use switches/buttons for:
+    // - Switch 0: Change ball speed
+    // - Switch 1: Enable/disable AI for player 2
+    // - Button 0: Pause game
+    // - Button 1: Reset game
+}
+    22f4:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    22f9:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    2300:	00 00 
+    2302:	75 4c                	jne    2350 <_Z20read_hardware_inputsP8GameData+0xa0>
+    2304:	48 83 c4 10          	add    $0x10,%rsp
+    2308:	5b                   	pop    %rbx
+    2309:	c3                   	ret
+    230a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+# include <bits/unistd-decl.h>
+
+__fortify_function __wur ssize_t
+read (int __fd, void *__buf, size_t __nbytes)
+{
+  return __glibc_fortify (read, __nbytes, sizeof (char),
+    2310:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2313:	48 8d 74 24 04       	lea    0x4(%rsp),%rsi
+    2318:	ba 04 00 00 00       	mov    $0x4,%edx
+    231d:	e8 ae f0 ff ff       	call   13d0 <read@plt>
+        if (read(game->fpga_fd, &data, sizeof(data)) > 0) {
+    2322:	48 85 c0             	test   %rax,%rax
+    2325:	7e cd                	jle    22f4 <_Z20read_hardware_inputsP8GameData+0x44>
+            game->buttons = data;
+    2327:	8b 44 24 04          	mov    0x4(%rsp),%eax
+    232b:	89 43 34             	mov    %eax,0x34(%rbx)
+    232e:	eb c4                	jmp    22f4 <_Z20read_hardware_inputsP8GameData+0x44>
+    2330:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2333:	48 8d 74 24 04       	lea    0x4(%rsp),%rsi
+    2338:	ba 04 00 00 00       	mov    $0x4,%edx
+    233d:	e8 8e f0 ff ff       	call   13d0 <read@plt>
+        if (read(game->fpga_fd, &data, sizeof(data)) > 0) {
+    2342:	48 85 c0             	test   %rax,%rax
+    2345:	7e 9a                	jle    22e1 <_Z20read_hardware_inputsP8GameData+0x31>
+            game->switches = data;
+    2347:	8b 44 24 04          	mov    0x4(%rsp),%eax
+    234b:	89 43 30             	mov    %eax,0x30(%rbx)
+    234e:	eb 91                	jmp    22e1 <_Z20read_hardware_inputsP8GameData+0x31>
+}
+    2350:	e8 2b f0 ff ff       	call   1380 <__stack_chk_fail@plt>
+    2355:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    235c:	00 00 00 00 
+
+0000000000002360 <_Z15hardware_threadPv>:
+
+// Hardware monitoring thread
+void* hardware_thread(void* arg) {
+    2360:	f3 0f 1e fa          	endbr64
+    2364:	41 54                	push   %r12
+    2366:	55                   	push   %rbp
+    2367:	53                   	push   %rbx
+    2368:	48 89 fb             	mov    %rdi,%rbx
+    236b:	48 8d 3d d8 0d 00 00 	lea    0xdd8(%rip),%rdi        # 314a <_IO_stdin_used+0x14a>
+    2372:	48 83 ec 10          	sub    $0x10,%rsp
+    2376:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    237d:	00 00 
+    237f:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2384:	31 c0                	xor    %eax,%eax
+    2386:	e8 75 f0 ff ff       	call   1400 <puts@plt>
+    GameData* game = (GameData*)arg;
+    
+    printf("Hardware thread started\n");
+    
+    while (game->running) {
+    238b:	8b 53 68             	mov    0x68(%rbx),%edx
+    238e:	85 d2                	test   %edx,%edx
+    2390:	0f 84 a2 01 00 00    	je     2538 <_Z15hardware_threadPv+0x1d8>
+    2396:	48 8d 6b 40          	lea    0x40(%rbx),%rbp
+        write(game->fpga_fd, &green_pattern, sizeof(green_pattern));
+    239a:	4c 8d 64 24 04       	lea    0x4(%rsp),%r12
+    239f:	e9 f1 00 00 00       	jmp    2495 <_Z15hardware_threadPv+0x135>
+    23a4:	0f 1f 40 00          	nopl   0x0(%rax)
+    if (ioctl(game->fpga_fd, RD_PBUTTONS) >= 0) {
+    23a8:	8b 7b 38             	mov    0x38(%rbx),%edi
+    23ab:	31 c0                	xor    %eax,%eax
+    23ad:	be 62 61 00 00       	mov    $0x6162,%esi
+    23b2:	e8 e9 ef ff ff       	call   13a0 <ioctl@plt>
+    23b7:	85 c0                	test   %eax,%eax
+    23b9:	0f 89 41 01 00 00    	jns    2500 <_Z15hardware_threadPv+0x1a0>
+    if (game->fpga_fd < 0) return;
+    23bf:	8b 7b 38             	mov    0x38(%rbx),%edi
+    23c2:	85 ff                	test   %edi,%edi
+    23c4:	0f 88 a6 00 00 00    	js     2470 <_Z15hardware_threadPv+0x110>
+    switch (game->state) {
+    23ca:	8b 03                	mov    (%rbx),%eax
+    uint32_t red_pattern = 0;
+    23cc:	c7 04 24 00 00 00 00 	movl   $0x0,(%rsp)
+    uint32_t green_pattern = 0;
+    23d3:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%rsp)
+    23da:	00 
+    switch (game->state) {
+    23db:	83 f8 02             	cmp    $0x2,%eax
+    23de:	0f 84 0b 01 00 00    	je     24ef <_Z15hardware_threadPv+0x18f>
+    23e4:	0f 87 f6 00 00 00    	ja     24e0 <_Z15hardware_threadPv+0x180>
+    23ea:	85 c0                	test   %eax,%eax
+    23ec:	0f 84 36 01 00 00    	je     2528 <_Z15hardware_threadPv+0x1c8>
+            red_pattern = (uint32_t)(game->ball.x / WINDOW_WIDTH * 32) & 0xFFFFFFFF;
+    23f2:	f3 0f 10 43 04       	movss  0x4(%rbx),%xmm0
+    23f7:	f3 0f 5e 05 09 0c 00 	divss  0xc09(%rip),%xmm0        # 3008 <_IO_stdin_used+0x8>
+    23fe:	00 
+    23ff:	f3 0f 59 05 0d 0c 00 	mulss  0xc0d(%rip),%xmm0        # 3014 <_IO_stdin_used+0x14>
+    2406:	00 
+    2407:	f3 48 0f 2c c0       	cvttss2si %xmm0,%rax
+            green_pattern = (uint32_t)(game->ball.y / WINDOW_HEIGHT * 32) & 0xFFFFFFFF;
+    240c:	f3 0f 10 43 08       	movss  0x8(%rbx),%xmm0
+    2411:	f3 0f 5e 05 ff 0b 00 	divss  0xbff(%rip),%xmm0        # 3018 <_IO_stdin_used+0x18>
+    2418:	00 
+    2419:	f3 0f 59 05 f3 0b 00 	mulss  0xbf3(%rip),%xmm0        # 3014 <_IO_stdin_used+0x14>
+    2420:	00 
+            red_pattern = (uint32_t)(game->ball.x / WINDOW_WIDTH * 32) & 0xFFFFFFFF;
+    2421:	89 04 24             	mov    %eax,(%rsp)
+            green_pattern = (uint32_t)(game->ball.y / WINDOW_HEIGHT * 32) & 0xFFFFFFFF;
+    2424:	f3 48 0f 2c c0       	cvttss2si %xmm0,%rax
+    2429:	89 44 24 04          	mov    %eax,0x4(%rsp)
+    if (ioctl(game->fpga_fd, WR_RED_LEDS) >= 0) {
+    242d:	31 c0                	xor    %eax,%eax
+    242f:	be 65 61 00 00       	mov    $0x6165,%esi
+    2434:	e8 67 ef ff ff       	call   13a0 <ioctl@plt>
+    2439:	85 c0                	test   %eax,%eax
+    243b:	78 10                	js     244d <_Z15hardware_threadPv+0xed>
+        write(game->fpga_fd, &red_pattern, sizeof(red_pattern));
+    243d:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2440:	48 89 e6             	mov    %rsp,%rsi
+    2443:	ba 04 00 00 00       	mov    $0x4,%edx
+    2448:	e8 73 ee ff ff       	call   12c0 <write@plt>
+    if (ioctl(game->fpga_fd, WR_GREEN_LEDS) >= 0) {
+    244d:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2450:	31 c0                	xor    %eax,%eax
+    2452:	be 66 61 00 00       	mov    $0x6166,%esi
+    2457:	e8 44 ef ff ff       	call   13a0 <ioctl@plt>
+    245c:	85 c0                	test   %eax,%eax
+    245e:	78 10                	js     2470 <_Z15hardware_threadPv+0x110>
+        write(game->fpga_fd, &green_pattern, sizeof(green_pattern));
+    2460:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2463:	ba 04 00 00 00       	mov    $0x4,%edx
+    2468:	4c 89 e6             	mov    %r12,%rsi
+    246b:	e8 50 ee ff ff       	call   12c0 <write@plt>
+        // Read inputs
+        read_hardware_inputs(game);
+        
+        // Update outputs
+        update_leds(game);
+        update_displays(game);
+    2470:	48 89 df             	mov    %rbx,%rdi
+    2473:	e8 08 fd ff ff       	call   2180 <_Z15update_displaysP8GameData>
+        
+        pthread_mutex_unlock(&game->mutex);
+    2478:	48 89 ef             	mov    %rbp,%rdi
+    247b:	e8 b0 ee ff ff       	call   1330 <pthread_mutex_unlock@plt>
+        
+        // Update at 30Hz to avoid overwhelming the hardware
+        usleep(33333); // ~30 FPS
+    2480:	bf 35 82 00 00       	mov    $0x8235,%edi
+    2485:	e8 26 ef ff ff       	call   13b0 <usleep@plt>
+    while (game->running) {
+    248a:	8b 43 68             	mov    0x68(%rbx),%eax
+    248d:	85 c0                	test   %eax,%eax
+    248f:	0f 84 a3 00 00 00    	je     2538 <_Z15hardware_threadPv+0x1d8>
+        pthread_mutex_lock(&game->mutex);
+    2495:	48 89 ef             	mov    %rbp,%rdi
+    2498:	e8 43 ef ff ff       	call   13e0 <pthread_mutex_lock@plt>
+    if (game->fpga_fd < 0) return;
+    249d:	8b 7b 38             	mov    0x38(%rbx),%edi
+    24a0:	85 ff                	test   %edi,%edi
+    24a2:	78 cc                	js     2470 <_Z15hardware_threadPv+0x110>
+    if (ioctl(game->fpga_fd, RD_SWITCHES) >= 0) {
+    24a4:	31 c0                	xor    %eax,%eax
+    24a6:	be 61 61 00 00       	mov    $0x6161,%esi
+    24ab:	e8 f0 ee ff ff       	call   13a0 <ioctl@plt>
+    24b0:	85 c0                	test   %eax,%eax
+    24b2:	0f 88 f0 fe ff ff    	js     23a8 <_Z15hardware_threadPv+0x48>
+    24b8:	8b 7b 38             	mov    0x38(%rbx),%edi
+    24bb:	ba 04 00 00 00       	mov    $0x4,%edx
+    24c0:	4c 89 e6             	mov    %r12,%rsi
+    24c3:	e8 08 ef ff ff       	call   13d0 <read@plt>
+        if (read(game->fpga_fd, &data, sizeof(data)) > 0) {
+    24c8:	48 85 c0             	test   %rax,%rax
+    24cb:	0f 8e d7 fe ff ff    	jle    23a8 <_Z15hardware_threadPv+0x48>
+            game->switches = data;
+    24d1:	8b 44 24 04          	mov    0x4(%rsp),%eax
+    24d5:	89 43 30             	mov    %eax,0x30(%rbx)
+    24d8:	e9 cb fe ff ff       	jmp    23a8 <_Z15hardware_threadPv+0x48>
+    24dd:	0f 1f 00             	nopl   (%rax)
+    switch (game->state) {
+    24e0:	83 f8 03             	cmp    $0x3,%eax
+    24e3:	0f 85 44 ff ff ff    	jne    242d <_Z15hardware_threadPv+0xcd>
+            if (game->winner == 1) {
+    24e9:	83 7b 2c 01          	cmpl   $0x1,0x2c(%rbx)
+    24ed:	74 71                	je     2560 <_Z15hardware_threadPv+0x200>
+                red_pattern = 0xFFFFFFFF;   // Player 2 wins
+    24ef:	c7 04 24 ff ff ff ff 	movl   $0xffffffff,(%rsp)
+    24f6:	e9 32 ff ff ff       	jmp    242d <_Z15hardware_threadPv+0xcd>
+    24fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2500:	8b 7b 38             	mov    0x38(%rbx),%edi
+    2503:	ba 04 00 00 00       	mov    $0x4,%edx
+    2508:	4c 89 e6             	mov    %r12,%rsi
+    250b:	e8 c0 ee ff ff       	call   13d0 <read@plt>
+        if (read(game->fpga_fd, &data, sizeof(data)) > 0) {
+    2510:	48 85 c0             	test   %rax,%rax
+    2513:	0f 8e a6 fe ff ff    	jle    23bf <_Z15hardware_threadPv+0x5f>
+            game->buttons = data;
+    2519:	8b 44 24 04          	mov    0x4(%rsp),%eax
+    251d:	89 43 34             	mov    %eax,0x34(%rbx)
+    2520:	e9 9a fe ff ff       	jmp    23bf <_Z15hardware_threadPv+0x5f>
+    2525:	0f 1f 00             	nopl   (%rax)
+            green_pattern = 0x55555555; // Alternating LEDs
+    2528:	c7 44 24 04 55 55 55 	movl   $0x55555555,0x4(%rsp)
+    252f:	55 
+            break;
+    2530:	e9 f8 fe ff ff       	jmp    242d <_Z15hardware_threadPv+0xcd>
+    2535:	0f 1f 00             	nopl   (%rax)
+    2538:	48 8d 3d 23 0c 00 00 	lea    0xc23(%rip),%rdi        # 3162 <_IO_stdin_used+0x162>
+    253f:	e8 bc ee ff ff       	call   1400 <puts@plt>
+    }
+    
+    printf("Hardware thread finished\n");
+    return NULL;
+}
+    2544:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2549:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    2550:	00 00 
+    2552:	75 19                	jne    256d <_Z15hardware_threadPv+0x20d>
+    2554:	48 83 c4 10          	add    $0x10,%rsp
+    2558:	31 c0                	xor    %eax,%eax
+    255a:	5b                   	pop    %rbx
+    255b:	5d                   	pop    %rbp
+    255c:	41 5c                	pop    %r12
+    255e:	c3                   	ret
+    255f:	90                   	nop
+                green_pattern = 0xFFFFFFFF; // Player 1 wins
+    2560:	c7 44 24 04 ff ff ff 	movl   $0xffffffff,0x4(%rsp)
+    2567:	ff 
+    2568:	e9 c0 fe ff ff       	jmp    242d <_Z15hardware_threadPv+0xcd>
+}
+    256d:	e8 0e ee ff ff       	call   1380 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:
+
+0000000000002574 <_fini>:
+    2574:	f3 0f 1e fa          	endbr64
+    2578:	48 83 ec 08          	sub    $0x8,%rsp
+    257c:	48 83 c4 08          	add    $0x8,%rsp
+    2580:	c3                   	ret
