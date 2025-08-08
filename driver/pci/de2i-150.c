@@ -1,4 +1,5 @@
 #include <linux/init.h>
+#include <linux/device.h>
 #include <linux/module.h>	/* THIS_MODULE macro */
 #include <linux/fs.h>		/* VFS related */
 #include <linux/ioctl.h>	/* ioctl syscall */
@@ -125,7 +126,7 @@ static int __init my_init(void)
 	printk("my_driver: device number %d was registered!\n", MAJOR(my_device_nbr));
 
 	/* 2. create class : appears at /sys/class */
-	if ((my_class = class_create(THIS_MODULE, DRIVER_CLASS)) == NULL) {
+	if ((my_class = class_create(DRIVER_CLASS)) == NULL) {
 		printk("my_driver: device class count not be created!\n");
 		goto ClassError;
 	}
